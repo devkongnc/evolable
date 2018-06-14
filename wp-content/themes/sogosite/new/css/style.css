@@ -79,11 +79,11 @@ a[href^="tel"]{
 .navbar-nav > li > a{background:none !important;padding-left:0;font-weight:bold;}
 .navbar-nav > li:hover > a,.navbar-nav > li.current > a{color:#5dc23c;}
 .navbar-collapse{padding-left:0;padding-right:0;}
-.lang-menu{overflow:hidden;width:100%;display:block;margin:20px 10px;}
-.navbar-nav .lang-menu{display:none !important;}
-.lang-menu li{float:left;list-style:none;margin:0 10px 0 0;}
-.lang-menu li a{display:inline-block;background:#5dc23c;color:#fff;text-align:center;font-size:12px;height:16px;line-height:16px;width:60px;border-radius:8px;border:solid 1px #5dc23c;font-weight:bold;}
-.lang-menu li a:hover,.lang-menu li a.current{background:#fff;color:#5dc23c;}
+#qtranslate-chooser{overflow:hidden;width:100%;display:block;margin:20px 10px;}
+.navbar-nav #qtranslate-chooser{display:none !important;}
+#qtranslate-chooser li{float:left;list-style:none;margin:0 10px 0 0;}
+#qtranslate-chooser li a{text-transform: uppercase; display:inline-block;background:#5dc23c;color:#fff;text-align:center;font-size:12px;height:16px;line-height:16px;width:60px;border-radius:8px;border:solid 1px #5dc23c;font-weight:bold;}
+#qtranslate-chooser li a:hover,#qtranslate-chooser li.active a{background:#fff;color:#5dc23c;}
 .employ-btn{color:#fff;height:50px;line-height:50px;font-weight:bold;padding:0 20px;text-align:center;display:block;margin:50px 0 0 0;
 	background:-moz-linear-gradient(120deg, #5dc23c, #acee0d);
 	background:-webkit-gradient(120deg, #5dc23c, #acee0d);

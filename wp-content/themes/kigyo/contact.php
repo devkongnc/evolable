@@ -33,7 +33,7 @@ get_sidebar();
         <div class="row">
             <div class="col-md-12">
                 <ul class="btn-section btn-3">
-                    <li><a class="current" href="<?php echo str_replace("/company/","/search/",get_site_url().'/'); ?>"">求人情報 </a></li>
+                    <li><a class="current" href="<?php echo str_replace("/recruitment/","/search/",get_site_url().'/'); ?>"">求人情報 </a></li>
                     <li><a href="<?php echo get_site_url();?>/column"">コラム</a></li>
                     <li><a href="<?php echo get_site_url();?>/interviews">INTERVIEW</a></li>
                     
@@ -47,7 +47,7 @@ get_sidebar();
    
    <div class="form-content gray-bg">
         <div class="container">
-        <?php echo do_shortcode('[contact-form-7 id="610" title="Contact form 1"]'); ?>
+        <?php echo do_shortcode('[contact-form-7 id="597" title="Contact-form"]'); ?>
         
         </div>
    </div>
