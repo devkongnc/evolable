@@ -1,6 +1,7 @@
 
 # BEGIN WordPress
 RewriteEngine On
+
 RewriteBase /evolable/
 RewriteRule ^index\.php$ - [L]
 

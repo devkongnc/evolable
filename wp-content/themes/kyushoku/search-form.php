@@ -44,7 +44,6 @@
 
             <?php
             	foreach ($lpocations as $key => $arposition) {
-
                 	if($arposition[0]->parent == 0){
                 		?>
 							<optgroup label="<?php echo $arposition[0]->name ?>">
@@ -63,8 +62,6 @@
 							</optgroup>
                 		<?php
                 	}
-
-
 				 }
             ?>
 		</select>
