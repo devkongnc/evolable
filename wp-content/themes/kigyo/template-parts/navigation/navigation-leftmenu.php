@@ -10,65 +10,25 @@
 
 ?>
         <ul class="nav navbar-nav" id="top-nav">
-          <?php if (qtrans_getLanguage()=='ja'){ ?>
-              <li class="">
+         <li class="">
                  <a href="/evolable">トップ</a>
               </li>
             
               <li>
-                 <a href="<?php echo get_site_url(); ?>/ja/column-index">求職者応援コラム</a>
+                 <a href="<?php echo get_site_url(); ?>/<?php echo qtranxf_getLanguage(); ?>/column-index">求職者応援コラム</a>
               </li>
 
                <li  class="nav-parrent">
-                   <a href="#">求人情報検索</a>
+                <a href="<?php echo str_replace("/top/".qtranxf_getLanguage()."/","/recruitment/".qtranxf_getLanguage()."/",get_site_url().'/'.qtranxf_getLanguage().'/'); ?>">求人情報検索</a>
+                  
                    <ul class="sub-nav">
-                    <li><a href="<?php echo get_site_url(); ?>/ja/interviews">利用者インタビュー</a></li>
+                    <li><a href="<?php echo get_site_url(); ?>/<?php echo qtranxf_getLanguage(); ?>/interviews">利用者インタビュー</a></li>
                     <li><a href="#">応募フォーム</a></li>
                    </ul>
                </li>
                <li>
-                   <a href="<?php echo get_site_url(); ?>/ja/about">企業概要</a>
+                   <a href="<?php echo get_site_url(); ?>/<?php echo qtranxf_getLanguage(); ?>/about">企業概要</a>
                </li>
-              <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
-                  <li class="">
-                 <a href="/evolable">トップ</a>
-              </li>
-            
-              <li>
-                 <a href="<?php echo get_site_url(); ?>/vi/column-index">求職者応援コラム</a>
-              </li>
-
-               <li  class="nav-parrent">
-                   <a href="#">求人情報検索</a>
-                   <ul class="sub-nav">
-                    <li><a href="<?php echo get_site_url(); ?>/vi/interviews">利用者インタビュー</a></li>
-                    <li><a href="#">応募フォーム</a></li>
-                   </ul>
-               </li>
-               <li>
-                   <a href="<?php echo get_site_url(); ?>/vi/about">企業概要</a>
-               </li>
-              <?php }else if (qtrans_getLanguage()=='en'){ ?> 
-                  <li class="">
-                 <a href="/evolable">トップ</a>
-              </li>
-            
-              <li>
-                 <a href="<?php echo get_site_url(); ?>/en/column-index">求職者応援コラム</a>
-              </li>
-
-               <li  class="nav-parrent">
-                   <a href="#">求人情報検索</a>
-                   <ul class="sub-nav">
-                    <li><a href="<?php echo get_site_url(); ?>/en/interviews">利用者インタビュー</a></li>
-                    <li><a href="#">応募フォーム</a></li>
-                   </ul>
-               </li>
-               <li>
-                   <a href="<?php echo get_site_url(); ?>/en/about">企業概要</a>
-               </li>
-              <?php } ?>
-
        </ul>
 
 

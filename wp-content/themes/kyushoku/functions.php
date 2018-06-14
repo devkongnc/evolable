@@ -55,6 +55,24 @@ function recruitment_admin_custom_styles() {
     </style>';
     echo $output_css;
 }*/
-
-
-?>
+add_theme_support( 'custom-logo', array(
+		'height'      => 240,
+		'width'       => 240,
+		'flex-height' => true,
+	) );
+	add_theme_support( 'site-logo', '' );
+	//custom logo
+	function theme_custom_logo() {
+		if ( function_exists( 'the_custom_logo' ) ) {
+			the_custom_logo();
+		}
+	}
+	add_filter('get_custom_logo','change_logo_class');
+	 
+	 
+	function change_logo_class($html)
+	{
+		$html = str_replace('custom-logo-link', 'navbar-brand', $html);
+		$html = str_replace('custom-logo', '', $html);
+		return $html;
+	}
