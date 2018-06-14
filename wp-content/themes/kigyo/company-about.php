@@ -19,19 +19,23 @@ get_sidebar();
 ?>
 <div class="right-content">
     <div class="breadcrumb-bg">
-        <h2>企業概要</h2>
+        <h2>
+        <?php if (qtrans_getLanguage()=='ja'){ ?>
+            企業概要
+        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+            企業概要
+        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+            企業概要
+        <?php } ?>
+        </h2>
     </div>
     
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <ul class="btn-section">
-                    <li><a class="current" href="#">会社情報</a></li>
-                    <li><a href="#">3つの強み</a></li>
-                    <li><a href="#">INTERVIEW</a></li>
-                    <li><a href="#">企業様向けコラム</a></li>
-                    <li><a href="#">お問い合わせ</a></li>
-                </ul>
+                <?php if ( has_nav_menu( 'topmenu' ) ) : ?>
+                    <?php get_template_part( 'template-parts/navigation/navigation', 'topmenu' ); ?>
+                <?php endif; ?>
             </div>
         </div>
         <div class="row">
@@ -305,7 +309,13 @@ get_sidebar();
                             どんな採用ニーズをお持ちですか？　まずはご相談ください。
                         <?php } ?>
                     </div>
-                    <?php echo get_field('button_contact'); ?>
+                    <?php if (qtrans_getLanguage()=='ja'){ ?>
+                        <a href="<?php echo get_site_url(); ?>/ja/contact" class="big-btn">お問い合わせ、ご相談はこちらからお願いいたします</a>
+                    <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+                        <a href="<?php echo get_site_url(); ?>/vi/contact" class="big-btn">お問い合わせ、ご相談はこちらからお願いいたします</a>
+                    <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+                        <a href="<?php echo get_site_url(); ?>/en/contact" class="big-btn">お問い合わせ、ご相談はこちらからお願いいたします</a>。
+                    <?php } ?>
             </div>
         </div>
         </div>
