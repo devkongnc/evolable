@@ -25,13 +25,9 @@ get_sidebar();
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <ul class="btn-section">
-                    <li><a class="current" href="#">会社情報</a></li>
-                    <li><a href="#">3つの強み</a></li>
-                    <li><a href="#">INTERVIEW</a></li>
-                    <li><a href="#">企業様向けコラム</a></li>
-                    <li><a href="#">お問い合わせ</a></li>
-                </ul>
+                <?php if ( has_nav_menu( 'topmenu' ) ) : ?>
+                    <?php get_template_part( 'template-parts/navigation/navigation', 'topmenu' ); ?>
+                <?php endif; ?>
             </div>
         </div>
     

@@ -17,28 +17,33 @@
 <div class="left-menu-scroll">
 <div class="left-menu-content">
   <div id="navwrap">
-                          <nav class="transparent-white navbar navbar-transparent" role="navigation">
-                                <div class="navbar-header page-scroll">
-                                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                                   <i class="fa fa-bars"></i>
-                                   </button>
-                                   <a class="navbar-brand" href="index.html">
-                                   <span ><img src="<?php echo get_template_directory_uri(); ?>/new/img/logo.png" ></span>
-                                   </a>
-                                </div>
-                <ul class="lang-menu">
-                  <li><a href="#" class="current">JP</a></li>
-                  <li><a href="#">EN</a></li>
-                  <li><a href="#">VN</a></li>
-                </ul>
-                                <div class="collapse navbar-collapse navbar-main-collapse">
-                                  
-                                   <?php get_template_part( 'template-parts/navigation/navigation', 'leftmenu' ); ?>
-                                </div>
+        <nav class="transparent-white navbar navbar-transparent" role="navigation">
+              <div class="navbar-header page-scroll">
+                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                 <i class="fa fa-bars"></i>
+                 </button>
+                <?php theme_custom_logo(); ?>
+              </div>
+              <?php  
+                 if (function_exists('qtrans_generateLanguageSelectCode')) {
+                    //print_r(qtrans_generateLanguageSelectCode('hreflang'));
+                      echo qtrans_generateLanguageSelectCode('short');
+                  }
+              ?>
+              <div class="collapse navbar-collapse navbar-main-collapse">
+                
+                 <?php get_template_part( 'template-parts/navigation/navigation', 'leftmenu' ); ?>
+              </div>
 
-                            <a href="<?php echo get_site_url(); ?>/top" class="employ-btn"><img src="<?php echo get_template_directory_uri(); ?>/new/img/icon-building.png" > 採用企業の皆さまへ</a>
-                          </nav>
-                       </div>
+          <?php if (qtrans_getLanguage()=='ja'){ ?>
+            <a href="<?php echo get_site_url(); ?>/top/ja" class="employ-btn"><img src="<?php echo get_stylesheet_directory_uri(); ?>/new/img/icon-building.png" > 採用企業の皆さまへ</a>
+        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+            <a href="<?php echo get_site_url(); ?>/top/vi" class="employ-btn"><img src="<?php echo get_stylesheet_directory_uri(); ?>/new/img/icon-building.png" > 採用企業の皆さまへ</a>
+        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+            <a href="<?php echo get_site_url(); ?>/top/en" class="employ-btn"><img src="<?php echo get_stylesheet_directory_uri(); ?>/new/img/icon-building.png" > 採用企業の皆さまへ</a>
+        <?php } ?>
+        </nav>
+     </div>
         <div class="banner">
           <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/new/img/banner1.jpg" ></a>
           <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/new/img/banner2.jpg" ></a>

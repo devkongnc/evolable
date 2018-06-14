@@ -19,11 +19,12 @@
 	        "capability_type" => "post",
 	        "map_meta_cap" => true,
 	        "hierarchical" => false,
-	        "rewrite" => array("slug" => "news", "with_front" => true),
+	        "rewrite" => array("slug" => "newsrelease", "with_front" => true),
 	        "query_var" => true,
 	        "supports" => array("title", "editor","thumbnail"),
+	        'taxonomies' => array('category'),
 	    );
-	    register_post_type("news", $args);
+	    register_post_type("newsrelease", $args);
 	}
 
 ?>
