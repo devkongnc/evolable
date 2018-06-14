@@ -10,10 +10,10 @@ if( isset( $_GET['action'] ) && $_GET['action'] == 'news' ) {
 
 	$data = array();
 
-	if( $wp_query->have_posts() ) : 
+	if( $wp_query->have_posts() ) :
 		while( $wp_query->have_posts() ) :
 			$wp_query->the_post();
-			
+
 			$data[] = array(
 				'date' => get_the_date( 'Y.m.d' ),
 				'title' => get_the_title()
@@ -37,10 +37,10 @@ if( isset( $_GET['action'] ) && $_GET['action'] == 'jobs' ) {
 
 	$data = array();
 
-	if( $wp_query->have_posts() ) : 
+	if( $wp_query->have_posts() ) :
 		while( $wp_query->have_posts() ) :
 			$wp_query->the_post();
-			
+
 			$data[] = array(
 				'link' => get_the_permalink(),
 				'image' => get_field( 'default_image' ) ? get_field( 'default_image' ) : get_template_directory_uri().'/images/recruitment/img-4.png',
