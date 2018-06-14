@@ -48,13 +48,15 @@ get_sidebar();
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <ul class="btn-section">
-                    <li><a class="current" href="#">会社情報</a></li>
+                    <?php if ( has_nav_menu( 'topmenu' ) ) : ?>
+                        <?php get_template_part( 'template-parts/navigation/navigation', 'topmenu' ); ?>
+                    <?php endif; ?>
+                    <!-- <li><a class="current" href="#">会社情報</a></li>
                     <li><a href="#">3つの強み</a></li>
                     <li><a href="#">INTERVIEW</a></li>
                     <li><a href="#">企業様向けコラム</a></li>
-                    <li><a href="#">お問い合わせ</a></li>
-                </ul>
+                    <li><a href="#">お問い合わせ</a></li> -->
+                
             </div>
         </div>
         <div class="row">
@@ -88,7 +90,14 @@ get_sidebar();
                         <?php } ?>
 
                     </div>
-                    <a href="#" class="big-btn">お問い合わせ、ご相談はこちらからお願いいたします</a>
+                    <?php if (qtrans_getLanguage()=='ja'){ ?>
+                        <a href="<?php echo get_site_url(); ?>/ja/contact" class="big-btn">お問い合わせ、ご相談はこちらからお願いいたします</a>
+                    <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+                        <a href="<?php echo get_site_url(); ?>/vi/contact" class="big-btn">お問い合わせ、ご相談はこちらからお願いいたします</a>
+                    <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+                        <a href="<?php echo get_site_url(); ?>/en/contact" class="big-btn">お問い合わせ、ご相談はこちらからお願いいたします</a>。
+                    <?php } ?>
+                    
                 </div>
             </div>
         </div>
@@ -149,7 +158,13 @@ get_sidebar();
         <div clss="row">
         <div class="col-md-12">
             <div class="center">
-                <?php echo get_field('button_service'); ?>
+                <?php if (qtrans_getLanguage()=='ja'){ ?>
+                    <a href="<?php echo get_site_url(); ?>/ja/service" class="view-more-btn">もっと詳しく</a>
+                <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+                    <a href="<?php echo get_site_url(); ?>/vi/service" class="view-more-btn">もっと詳しく</a>
+                <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+                    <a href="<?php echo get_site_url(); ?>/en/service" class="view-more-btn">もっと詳しく</a>
+                <?php } ?>
                 
             </div>
         </div>
@@ -198,7 +213,7 @@ get_sidebar();
                     $link = get_post_meta($post->ID, '_eaa_interview_link_value', true);
                     
                 ?>
-                <div class="inter-big" style="background:url(<?php echo $image_src ;?>) no-repeat top left;background-size:cover;">
+            <div class="inter-big" style="background:url(<?php echo $image_src ;?>) no-repeat top left;background-size:cover;">
                 <div class="inter-big-overlay">
                     <a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a>
                     <p><?php echo mb_strimwidth(wp_strip_all_tags(get_the_content($post->ID)), 0, 80, '...'); ?></p>
@@ -207,12 +222,13 @@ get_sidebar();
                         <span><?php echo $termCompany[0]->name; ?></span>
                     </div>
                 </div>
+            </div>
                     <?php   
             wp_reset_postdata();
             }
         ?>
                 
-            </div>
+            
             <div class="inter-bg">
                 <div class="title-blk">
                     <h2>
@@ -224,7 +240,14 @@ get_sidebar();
                         インタビュー
                     <?php } ?>
                     </h2>
-                <a href="#" class="view-more-btn no-bg">一覧を見る</a>
+                    <?php if (qtrans_getLanguage()=='ja'){ ?>
+                        <a href="<?php echo get_site_url(); ?>/ja/interviews" class="view-more-btn no-bg">一覧を見る</a>
+                    <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+                        <a href="<?php echo get_site_url(); ?>/vi/interviews" class="view-more-btn no-bg">一覧を見る</a>
+                    <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+                        <a href="<?php echo get_site_url(); ?>/en/interviews" class="view-more-btn no-bg">一覧を見る</a>
+                    <?php } ?>
+                
                 </div>
                 <div class="inter-list">
                 <?php
@@ -291,50 +314,73 @@ get_sidebar();
         <div clss="row">
             <div class="col-md-12">
                 <div class="title-blk">
-                <h2 class="title-h">企業様向けコラム</h2>
-                <a href="#" class="view-more-btn">一覧を見る</a>
+                <h2 class="title-h">
+                <?php if (qtrans_getLanguage()=='ja'){ ?>
+                    企業様向けコラム
+                <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+                    企業様向けコラム
+                <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+                    企業様向けコラム
+                <?php } ?>
+                    </h2>
+                    <?php echo get_field('button_service'); ?>
+                
                 </div>
             </div>
         </div>
         <div clss="row">
             <div class="col-md-12">
-            
-                <div class="blog-blk">
+                <?php
+                global $post;
+             
+                $posts = get_posts( array(
+                    'posts_per_page' => 2,
+                    'post_type' => 'columns',
+                    'post_status'=>'publish',
+                    'orderby' => 'post_date',
+                    'order' => 'DESC',
+                ) );
+             
+                if ($posts) {
+                    foreach ($posts as $post) : 
+                        setup_postdata($post); ?>
+
+                        <div class="blog-blk">
                 
-                        <img src="<?php echo get_template_directory_uri(); ?>/new/img/img0.jpg" >
-                        <a href="#">【経験必須】トレーニングマネージャー募集</a>
+                        <img src="<?php echo get_the_post_thumbnail_url( null, 'post-thumbnail' );?>" >
+
+                        <a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a>
+                        
                         <ul class="tags-list">
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">建設／建築</a></li>
-                            <li><a href="#">海外</a></li>
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">マネジメント</a></li>
+                            <?php 
+                        foreach((get_the_category()) as $key => $category) { 
+                            $category_link = get_category_link($category->cat_ID); ?>
+                            
+                            <li>
+                                <a href="<?php echo $category_link; ?>" class="catlink" data-id="<?php echo $category->cat_ID; ?>"><?php echo $category->cat_name; ?></a>
+                    </li>
+                            
+                    <?php   } 
+                    ?>
+
+                           
                         </ul>
                         <p>
-                            ■業務内容・日本国内の代理店様への電話対応・納期調整や仕様変更を関係部署との調整 ■必須スキル・社会人経験3年以上(VISA取得の為)・英語での実務経験(日常英会話程度でも可)…
+                        <?php echo mb_strimwidth(wp_strip_all_tags(get_the_content($post->post_content)), 0, 150, '...'); ?>
+                           
                         </p>
-                        <span class="blog-date">― 2018.04.01 UPDATED</span>
+                        <span class="blog-date">― <?php the_modified_time('Y.m.d'); ?> UPDATED</span>
                 
                 </div>
-                <div class="blog-blk">
-                    
-                        <img src="<?php echo get_template_directory_uri(); ?>/new/img/img0.jpg" >
-                        <a href="#">【経験必須】トレーニングマネージャー募集</a>
-                        <ul class="tags-list">
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">建設／建築</a></li>
-                            <li><a href="#">海外</a></li>
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">マネジメント</a></li>
-                        </ul>
-                        <p>
-                            ■業務内容・日本国内の代理店様への電話対応・納期調整や仕様変更を関係部署との調整 ■必須スキル・社会人経験3年以上(VISA取得の為)・英語での実務経験(日常英会話程度でも可)…
-                        </p>
-                        <span class="blog-date">― 2018.04.01 UPDATED</span>
-                    
-                </div>
+
+
+                        
+                    <?php
+                    endforeach;
+                    wp_reset_postdata();
+                }
+            ?>
+               
             </div>
         </div>
         
@@ -382,7 +428,13 @@ get_sidebar();
                             どんな採用ニーズをお持ちですか？　まずはご相談ください。
                         <?php } ?>
                     </div>
-                    <?php echo get_field('button_contact'); ?>
+                    <?php if (qtrans_getLanguage()=='ja'){ ?>
+                        <a href="<?php echo get_site_url(); ?>/ja/contact" class="big-btn">お問い合わせ、ご相談はこちらからお願いいたします</a>
+                    <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+                        <a href="<?php echo get_site_url(); ?>/vi/contact" class="big-btn">お問い合わせ、ご相談はこちらからお願いいたします</a>
+                    <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+                        <a href="<?php echo get_site_url(); ?>/en/contact" class="big-btn">お問い合わせ、ご相談はこちらからお願いいたします</a>。
+                    <?php } ?>
                 </div>
             </div>
         </div>

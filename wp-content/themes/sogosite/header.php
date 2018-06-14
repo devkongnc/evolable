@@ -4,7 +4,7 @@
 	    <meta charset="UTF-8">
 	    <title>総合TOP｜エボラブルアジアエージェント</title>   
 	    <!-- <link rel="icon" type="image/png" href="images/heart.png"> -->  
-	   	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+	   	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	    <meta name="format-detection" content="telephone=no">
 	    <meta content="国内外の優秀な人材をご紹介いたします。御社の成長戦略実現をサポートさせていただくパートナーとして、単なる人材の紹介に留まらず、採用計画・人材配置・外国人採用定着のノウハウなど、人事戦略全般についてご相談を承ります。" name="description">
 	    <meta content="転職,求人,求人情報,中途採用、海外、グローバル人材、外国人採用、Web業界、エボラブルアジアエージェント、Evolable Asia Agent" name="keywords">

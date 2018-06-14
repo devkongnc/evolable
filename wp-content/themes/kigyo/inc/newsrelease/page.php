@@ -3,7 +3,7 @@
 		function load_news_page_single(){
 			global $post;
 			$args = array(
-				'post_type'         => 'news',
+				'post_type'         => 'newsrelease',
 				'posts_per_page'    => 6,
 				'orderby'           => 'date', 
 				'order'             => 'DESC'
