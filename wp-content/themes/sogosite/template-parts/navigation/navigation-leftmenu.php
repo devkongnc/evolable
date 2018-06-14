@@ -13,7 +13,7 @@
          <li class="current">
                  <a href="<?php echo get_site_url(); ?>">トップ</a>
               </li>
-            
+
               <li>
                  <a href="<?php echo get_site_url(); ?>/top/<?php echo qtranxf_getLanguage(); ?>/column-index">求職者応援コラム</a>
               </li>
