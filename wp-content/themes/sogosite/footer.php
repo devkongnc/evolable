@@ -2,7 +2,7 @@
 		   <div class="footer">
    		<p>©2018 EVOLABLE ASIA AGENT Co,. Ltd. </p>
    </div>
-    
+
 </div>
 
 <a id="back_to_top" href="#">
@@ -16,7 +16,7 @@
 <div class="search-work">
 			<div class="col-md-12">
 				<h2 class="green-txt">勤務地から探す</h2>
-				
+
 					<div class="row">
 						<div class="col-md-4">
 							<ul>
@@ -29,7 +29,7 @@
 							<img src="<?php echo get_template_directory_uri(); ?>/new/img/map.png">
 						</div>
 					</div>
-				
+
 			</div>
 		</div>
 </div>
@@ -87,17 +87,17 @@
 <div class="search-work">
 			<div class="col-md-12">
 				<h2 class="green-txt">キーワードから探す</h2>
-				
+
 					<div class="big-search">
 						<input type="text" >
 						<input type="submit" value="" class="big-search-btn" >
 					</div>
-				
+
 			</div>
 		</div>
 </div>
 
- 
+
    	<!-- js new -->
 <script src="<?php echo get_template_directory_uri(); ?>/new/js/jquery.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/new/js/bootstrap.min.js"></script>
@@ -112,7 +112,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/new/js/scripts.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	
+
 		$(".fancybox").fancybox();
 		$('.column-carousel').owlCarousel({
 			loop:true,
@@ -134,7 +134,7 @@ $(document).ready(function() {
 });
 </script>
 <script src="<?php echo get_template_directory_uri(); ?>/new/js/wow.min.js"></script>
-<script>new WOW().init();</script>   
+<script>new WOW().init();</script>
 
 
 	    <?php wp_footer(); ?>

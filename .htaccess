@@ -1,7 +1,8 @@
 
 # BEGIN WordPress
 RewriteEngine On
-RewriteBase /evolable/
+
+RewriteBase /
 RewriteRule ^index\.php$ - [L]
 
 # add a trailing slash to /wp-admin
