@@ -14,7 +14,7 @@
               <li class="current">
                  <a href="<?php echo get_site_url(); ?>">トップ</a>
               </li>
-            
+
               <li>
                  <a href="<?php echo get_site_url(); ?>/top/ja/column-index">求職者応援コラム</a>
               </li>
@@ -29,11 +29,11 @@
                <li>
                    <a href="<?php echo get_site_url(); ?>/top/ja/about">企業概要</a>
                </li>
-              <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+              <?php }else if (qtrans_getLanguage()=='vi'){ ?>
                   <li class="current">
                  <a href="<?php echo get_site_url(); ?>">トップ</a>
               </li>
-            
+
               <li>
                  <a href="<?php echo get_site_url(); ?>/top/vi/column-index">求職者応援コラム</a>
               </li>
@@ -48,11 +48,11 @@
                <li>
                    <a href="<?php echo get_site_url(); ?>/top/vi/about">企業概要</a>
                </li>
-              <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+              <?php }else if (qtrans_getLanguage()=='en'){ ?>
                   <li class="current">
                  <a href="<?php echo get_site_url(); ?>">トップ</a>
               </li>
-            
+
               <li>
                  <a href="<?php echo get_site_url(); ?>/top/en/column-index">求職者応援コラム</a>
               </li>
