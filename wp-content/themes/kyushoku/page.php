@@ -87,24 +87,32 @@ get_sidebar();
                                 <div id="tab2" class="tab-pane fade">
                                     <ul class="search-job-list">
                                     	<?php foreach ($plocations as $key => $arlocation) { ?>
+                                    	<?php if ($arlocation[0]->count > 0 && $arlocation[0]->parent != 0 && $arlocation[0]->parent != 353 && $arlocation[0]->parent != 354 && $arlocation[0]->parent != 355) { ?>
 					                    <form action="<?php echo site_url( '/'.qtranxf_getLanguage().'/jobs/'); ?>" method="get">
-					                        <input type="hidden" name="position" value="<?php echo $arlocation[0]->term_id ?>">
+					                        <input type="hidden" name="location" value="<?php echo $arlocation[0]->term_id ?>">
 					                        <li><button type="submit"><?php echo $arlocation[0]->name ?></button></li>
 					                    </form>
+					                   	<?php } ?>
 					                    <?php } ?>
                                     </ul>
                                 </div>
                                 <div id="tab3" class="tab-pane fade">
                                     <ul class="search-job-list">
-                                    	<?php foreach ($plocations as $key => $arlocation) { ?>
-					                    <form action="<?php echo site_url( '/'.qtranxf_getLanguage().'/jobs/'); ?>" method="get">
-					                        <input type="hidden" name="position" value="<?php echo $arlocation[0]->term_id ?>">
-					                        <li><button type="submit"><?php echo $arlocation[0]->name ?></button></li>
-					                    </form>
-					                    <?php } ?>
+                                    	<?php
+                                    	$oj_id = 353;
+										$oj_taxonomy_name = 'job-location';
+										$term_children = get_term_children( $oj_id, $oj_taxonomy_name );
+										?>
+                                    	<?php foreach ( $term_children as $child ) { ?>
+											<?php $term = get_term_by( 'id', $child, $oj_taxonomy_name ); ?>
+											<form action="<?php echo site_url( '/'.qtranxf_getLanguage().'/jobs/'); ?>" method="get">
+						                        <input type="hidden" name="location" value="<?php echo $child; ?>">
+						                        <li><button type="submit"><?php echo $term->name ?></button></li>
+						                    </form>
+										<?php } ?>
                                     </ul>
                                 </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
 			</div>
