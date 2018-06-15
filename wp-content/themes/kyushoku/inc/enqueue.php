@@ -50,7 +50,12 @@ if( !function_exists( 'kyushoku_scripts' ) ) {
 			wp_enqueue_script( 'kyushoku-recruitment-custom-detail', get_template_directory_uri() . '/js/recrui-detail/custom-detail.js', array(), '', true );
 		}
 
-		if(is_home() || is_page("top-page")){			
+		if(is_home() || is_page("top-page")){	
+			//add pagination	
+			wp_enqueue_style('kyushoku-recruitment-page', get_template_directory_uri() . '/css/recrui/recruitment.css', array(), '1.0', 'all');
+			wp_enqueue_style('kyushoku-recruitment-responsive', get_template_directory_uri() . '/css/recrui/responsive.css', array(), '1.0', 'all');
+
+
 			wp_enqueue_style('kyushoku-home-custom', get_template_directory_uri() . '/css/home.css', array(), '1.0', 'all');
 			wp_enqueue_style('kyushoku-index-style', get_template_directory_uri() . '/css/index_styles.css', array(), '1.0', 'all');
 
@@ -137,7 +142,7 @@ if( !function_exists( 'kyushoku_scripts' ) ) {
 
 		// js common
 		wp_enqueue_script( 'kyushoku-lib-bootstrap', get_template_directory_uri() . '/js/lib/combined.js', array(), '', true );
-		wp_enqueue_script( 'kyushoku-script-mainjs', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true );
+		/*wp_enqueue_script( 'kyushoku-script-mainjs', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true );*/
 
 
 	}

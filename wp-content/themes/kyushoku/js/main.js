@@ -62,5 +62,6 @@
     });
     $(function(){
         $("#qtranslate-language-index-chooser, #qtranslate-language-sp-chooser").addClass("dropdown-menu");
-    })
+    });
+    
 })(jQuery);
