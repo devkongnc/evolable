@@ -2,10 +2,10 @@
 	
 	$('.job-location > span').click(function() {
 		$('.job-location').toggleClass('active');
-		$('.toogle-benefit').toggle();
+		//$('.toogle-benefit').toggle();
 	})
 
-	$('.toogle-benefit > p').html( $('.toogle-benefit > p').html().replace(/\r?\n/g, '<br />') );
+	//$('.toogle-benefit > p').html( $('.toogle-benefit > p').html().replace(/\r?\n/g, '<br />') );
 
 	$( "#btnSubmit" ).click( function( e ) {
 		e.preventDefault();

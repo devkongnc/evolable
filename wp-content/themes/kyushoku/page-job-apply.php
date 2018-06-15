@@ -77,6 +77,8 @@ get_sidebar();
 	<div class="breadcrumb-bg">
 		<h2>APPLICANT FORM</h2>
 	</div>
+		
+
 		<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -112,7 +114,7 @@ get_sidebar();
 				</ul>
 			</div>
 		</div>
-	
+	<?php if($job_id): ?>
 <div id="cont-apply-job" class="row company-if">
 			<div class="col-md-4">
 				<h1>
@@ -145,7 +147,7 @@ get_sidebar();
 						<p>■No.<?php echo get_post_meta( $job_id, 'job_no', true ); ?></p>
 						
 				        <div class="toogle-benefit">
-            					<p>■<?php echo mb_strimwidth(wp_strip_all_tags(get_post_meta( $job_id, 'benefits', true )), 0, 80, '...'); ?></p>
+            					<p><?php echo '■'.mb_strimwidth(wp_strip_all_tags(get_post_meta( $job_id, 'benefits', true )), 0, 80, '...'); ?></p>
                          	</div>
 						
 						<div class="right">
@@ -158,13 +160,14 @@ get_sidebar();
 
 			</div>
 		</div>
-	
+	<?php endif; ?>
 </div>
-	                   
+	   
+
+
+
+
     <div class="form-content gray-bg">                       	
-	                    
-
-
 	<div id="apply-form" class="container-fluid">
 	    <div class="container">
 	        <div class="row">

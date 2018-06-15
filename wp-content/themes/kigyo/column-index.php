@@ -115,67 +115,80 @@ get_sidebar();
         <div clss="row">
             <div class="col-md-12">
                 <div class="title-blk">
-                <h2 class="title-h">求人者様向けコラム</h2>
-                <a href="#" class="view-more-btn">一覧を見る</a>
+                <h2 class="title-h"><?php if (qtrans_getLanguage()=='ja'){ ?>
+                    求人者様向けコラム
+                <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+                    求人者様向けコラム
+                <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+                   求人者様向けコラム
+                <?php } ?>
+            </h2>
+                <a href="<?php echo str_replace("/top/".qtranxf_getLanguage()."/","/recruitment/".qtranxf_getLanguage()."/",get_site_url().'/'.qtranxf_getLanguage().'/columns'); ?>" class="view-more-btn">
+                <?php if (qtrans_getLanguage()=='ja'){ ?>
+                    一覧を見る
+                <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+                    一覧を見る
+                <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+                   一覧を見る
+                <?php } ?>
+            </a>
                 </div>
             </div>
         </div>
         <div clss="row">
             <div class="col-md-12">
-                <div class="blog-blk">
+                 <?php
+                 switch_to_blog(2);
+                global $post;
+             
+                $posts = get_posts( array(
+                    'posts_per_page' => 3,
+                    'post_type' => 'columns',
+                    'post_status'=>'publish',
+                    'orderby' => 'post_date',
+                    'order' => 'DESC',
+                ) );
+             
+                if ($posts) {
+                    foreach ($posts as $post) : 
+                        setup_postdata($post); ?>
+
+                        <div class="blog-blk">
                 
-                        <img src="<?php echo get_template_directory_uri(); ?>/new/img/img0.jpg" >
-                        <a href="#">【経験必須】トレーニングマネージャー募集</a>
+                        <img src="<?php echo get_the_post_thumbnail_url( null, 'post-thumbnail' );?>" >
+
+                        <a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a>
+                        
                         <ul class="tags-list">
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">建設／建築</a></li>
-                            <li><a href="#">海外</a></li>
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">マネジメント</a></li>
+                            <?php 
+                        foreach((get_the_category()) as $key => $category) { 
+                            $category_link = get_category_link($category->cat_ID); ?>
+                            
+                            <li>
+                                <a href="<?php echo $category_link; ?>" class="catlink" data-id="<?php echo $category->cat_ID; ?>"><?php echo $category->cat_name; ?></a>
+                    </li>
+                            
+                    <?php   } 
+                    ?>
+
+                           
                         </ul>
                         <p>
-                            ■業務内容・日本国内の代理店様への電話対応・納期調整や仕様変更を関係部署との調整 ■必須スキル・社会人経験3年以上(VISA取得の為)・英語での実務経験(日常英会話程度でも可)…
+                        <?php echo mb_strimwidth(wp_strip_all_tags(get_the_content($post->post_content)), 0, 150, '...'); ?>
+                           
                         </p>
-                        <span class="blog-date">― 2018.04.01 UPDATED</span>
-                    
-                </div>
-                <div class="blog-blk">
-                
-                        <img src="<?php echo get_template_directory_uri(); ?>/new/img/img0.jpg" >
-                        <a href="#">【経験必須】トレーニングマネージャー募集</a>
-                        <ul class="tags-list">
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">建設／建築</a></li>
-                            <li><a href="#">海外</a></li>
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">マネジメント</a></li>
-                        </ul>
-                        <p>
-                            ■業務内容・日本国内の代理店様への電話対応・納期調整や仕様変更を関係部署との調整 ■必須スキル・社会人経験3年以上(VISA取得の為)・英語での実務経験(日常英会話程度でも可)…
-                        </p>
-                        <span class="blog-date">― 2018.04.01 UPDATED</span>
+                        <span class="blog-date">― <?php the_modified_time('Y.m.d'); ?> UPDATED</span>
                 
                 </div>
-                <div class="blog-blk">
-                    
-                        <img src="<?php echo get_template_directory_uri(); ?>/new/img/img0.jpg" >
-                        <a href="#">【経験必須】トレーニングマネージャー募集</a>
-                        <ul class="tags-list">
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">建設／建築</a></li>
-                            <li><a href="#">海外</a></li>
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">マネジメント</a></li>
-                            <li><a href="#">マネジメント</a></li>
-                        </ul>
-                        <p>
-                            ■業務内容・日本国内の代理店様への電話対応・納期調整や仕様変更を関係部署との調整 ■必須スキル・社会人経験3年以上(VISA取得の為)・英語での実務経験(日常英会話程度でも可)…
-                        </p>
-                        <span class="blog-date">― 2018.04.01 UPDATED</span>
-                    
-                </div>
+
+
+                        
+                    <?php
+                    endforeach;
+                    wp_reset_postdata();
+                }
+                 restore_current_blog(); 
+            ?>
             </div>
         </div>
         </div>
