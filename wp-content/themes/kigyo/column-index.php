@@ -371,7 +371,7 @@ get_sidebar();
 
                         ?>
 
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-3 col-sm-6 recruit">
                 <div class="job-blk">
                     <?php
                         if ( has_post_thumbnail() ) { ?>
@@ -385,13 +385,14 @@ get_sidebar();
                         $custom = get_post_custom();
                        foreach ($custom['salary'] as $key => $value) {
                         //print_r($value);
-                           echo $value;
+                           //echo $value;
+                           echo mb_strimwidth(wp_strip_all_tags($value), 0, 25, '...');
                        }
 
-                             //if ( !is_null(get_field('salary',$post->ID)) ) :
-                                echo the_field('salary',$post->ID);
-                            //endif; ?></div>
-                    <div class="job-if"><img src="<?php echo get_template_directory_uri(); ?>/new/img/icon-map.png" >
+                            // if ( !is_null(get_field('salary')) ) :
+                        //echo mb_strimwidth(wp_strip_all_tags(the_field('salary',$post->ID)), 0, 5, '...');
+                          //  endif; ?></div>
+                    <div class="job-if loca"><img src="<?php echo get_template_directory_uri(); ?>/new/img/icon-map.png" >
                         <?php 
                             if($term_locations){
                             foreach ($term_locations as $location) { 
