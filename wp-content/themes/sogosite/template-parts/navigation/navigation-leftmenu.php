@@ -22,7 +22,7 @@
                    <a href="<?php echo get_site_url(); ?>/recruitment">求人情報検索</a>
                    <ul class="sub-nav">
                     <li><a href="<?php echo get_site_url(); ?>/top/<?php echo qtranxf_getLanguage(); ?>/interviews">利用者インタビュー</a></li>
-                    <li><a href="#">応募フォーム</a></li>
+                    <li><a href="<?php echo get_site_url(); ?>/recruitment/<?php echo qtranxf_getLanguage(); ?>/job-apply">応募フォーム</a></li>
                    </ul>
                </li>
                <li>

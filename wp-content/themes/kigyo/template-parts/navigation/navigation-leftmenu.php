@@ -23,7 +23,7 @@
                   
                    <ul class="sub-nav">
                     <li><a href="<?php echo get_site_url(); ?>/<?php echo qtranxf_getLanguage(); ?>/interviews">利用者インタビュー</a></li>
-                    <li><a href="#">応募フォーム</a></li>
+                    <li><a href="<?php echo str_replace("/top/".qtranxf_getLanguage()."/","/recruitment/".qtranxf_getLanguage()."/",get_site_url().'/'.qtranxf_getLanguage().'/job-apply'); ?>">応募フォーム</a></li>
                    </ul>
                </li>
                <li>
