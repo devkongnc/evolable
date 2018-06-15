@@ -6,7 +6,7 @@
 		function load_column_index(){
 			global $post;
 			$args = array(
-				'post_type'         => 'search-column',
+				'post_type'         => 'columns',
 				'posts_per_page'    => 3,
 				'orderby'           => 'date',
 				'order'             => 'DESC'

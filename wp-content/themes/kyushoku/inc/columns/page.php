@@ -3,7 +3,7 @@
 		function load_column_page_single(){
 			global $post;
 			$args = array(
-				'post_type'         => 'search-columns',
+				'post_type'         => 'columns',
 				'posts_per_page'    => 6,
 				'orderby'           => 'date', 
 				'order'             => 'DESC'
