@@ -15,7 +15,7 @@ get_header();
 get_sidebar();
 ?>
 <div class="right-content">
-	
+
 	<div class="top-intro">
 		<div class="container">
 		<div class="row">
@@ -24,11 +24,11 @@ get_sidebar();
             <h2>あなたの "パートナー" として</h2>
 			<h1>あなたと企業が輝ける世界</h1>
 			<h2>の実現を目指して</h2>
-        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
             <h2>あなたの "パートナー" として</h2>
 			<h1>あなたと企業が輝ける世界</h1>
 			<h2>の実現を目指して</h2>
-        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+        <?php }else if (qtrans_getLanguage()=='en'){ ?>
             <h2>あなたの "パートナー" として</h2>
 			<h1>あなたと企業が輝ける世界</h1>
 			<h2>の実現を目指して</h2>
@@ -42,52 +42,52 @@ get_sidebar();
 			<p>当サイトでは、世界の様々な求人情報を取り扱っております。
 			<br>This site deals with various job information of the world.
 			<br>Trang web này liên quan đến thông tin việc làm khác nhau của thế giới.</p>
-	
+
 	<div class="search-intro">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/new/img/search-w.png" > 
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/new/img/search-w.png" >
 		<?php if (qtrans_getLanguage()=='ja'){ ?>
             求人情報を検索する
-        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
             求人情報を検索する
-        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+        <?php }else if (qtrans_getLanguage()=='en'){ ?>
             求人情報を検索する
-        <?php } ?> 
+        <?php } ?>
 		<ul class="search-list-btn">
 			<li><a href="#place-box" class="fancybox">
 				<?php if (qtrans_getLanguage()=='ja'){ ?>
 	            	勤務地から探す
-		        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 		            勤務地から探す
-		        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 		            勤務地から探す
-		        <?php } ?>	
+		        <?php } ?>
 	        </a></li>
 			<li><a href="#job" class="fancybox">
 				<?php if (qtrans_getLanguage()=='ja'){ ?>
 	            	職種から探す
-		        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 		            職種から探す
-		        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 		            職種から探す
 		        <?php } ?>
 		    </a></li>
 			<li><a href="#key-word" class="fancybox">
 				<?php if (qtrans_getLanguage()=='ja'){ ?>
 	            	キーワードから探す
-		        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 		            キーワードから探す
-		        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 		            キーワードから探す
 		        <?php } ?>
 		    </a></li>
 		</ul>
 	</div>
-	
+
 		</div>
 		</div>
 		</div>
 	</div>
-	
+
 	<div class="news-top">
 		<div class="container">
 		<div clss="row">
@@ -96,21 +96,21 @@ get_sidebar();
 			<h2 class="title-h">
 				<?php if (qtrans_getLanguage()=='ja'){ ?>
 	            	ニュースリリース
-		        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 		            ニュースリリース
-		        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 		            ニュースリリース
 		        <?php } ?>
 		    </h2>
-			
+
 				<?php if (qtrans_getLanguage()=='ja'){ ?>
 	            	<a href="<?php echo get_site_url(); ?>/top/ja/newsrelease" class="view-more-btn">一覧を見る</a>
-		        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 		            <a href="<?php echo get_site_url(); ?>/top/vi/newsrelease" class="view-more-btn">一覧を見る</a>
-		        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 		            <a href="<?php echo get_site_url(); ?>/top/en/newsrelease" class="view-more-btn">一覧を見る</a>
 		        <?php } ?>
-		    
+
 		</div>
 		<ul class="news-list">
 			<?php
@@ -124,41 +124,41 @@ get_sidebar();
 				 				'order' => 'DESC',
 						    ) );
 			if ($posts) {
-						        foreach ($posts as $post) : 
-						            setup_postdata($post); 
+						        foreach ($posts as $post) :
+						            setup_postdata($post);
 						?>
 			    <li>
 				<label class="news-date"><?php echo get_the_date('Y.m.d'); ?></label>
 				<ul class="categories-list">
-					<?php 
-						foreach((get_the_category()) as $key => $category) { 
+					<?php
+						foreach((get_the_category()) as $key => $category) {
 							$category_link = get_category_link($category->cat_ID); ?>
-							
+
 						    <li>
 						    	<?php if (qtrans_getLanguage()=='en'){ ?>
 						<a class="<?php echo ($key%2) ? "blue" : "pink"; ?>" href="<?php echo str_replace("/en/top/blog/","/top/en/",$category_link); ?>"><?php echo $category->cat_name; ?></a>
-	            	
-			        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+
+			        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 			            <a class="<?php echo ($key%2) ? "blue" : "pink"; ?>" href="<?php echo str_replace("/vi/top/blog/","/top/vi/",$category_link); ?>"><?php echo $category->cat_name; ?></a>
-			        <?php }else if (qtrans_getLanguage()=='ja'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='ja'){ ?>
 			            <a class="<?php echo ($key%2) ? "blue" : "pink"; ?>" href="<?php echo str_replace("/ja/top/blog/","/top/ja/",$category_link); ?>"><?php echo $category->cat_name; ?></a>
 			        <?php } ?>
 					</li>
-							
-					<?php	} 
+
+					<?php	}
 					?>
 					</ul>
 					<?php if (qtrans_getLanguage()=='en'){ ?>
 						<a href="<?php echo str_replace("/en/top/","/top/en/newsrelease/",get_permalink()); ?>" class="news-title"><?php echo get_the_title(); ?></a>
-	            	
-			        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+
+			        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 			            <a href="<?php echo str_replace("/vi/top/","/top/vi/newsrelease/",get_permalink()); ?>" class="news-title"><?php echo get_the_title(); ?></a>
-			        <?php }else if (qtrans_getLanguage()=='ja'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='ja'){ ?>
 			            <a href="<?php echo str_replace("/ja/top/","/top/ja/newsrelease/",get_permalink()); ?>" class="news-title"><?php echo get_the_title(); ?></a>
 			        <?php } ?>
 
-				
-			</li>      
+
+			</li>
 		<?php
 		endforeach;
 		wp_reset_postdata();
@@ -171,8 +171,8 @@ get_sidebar();
 		</div>
 		</div>
 	</div>
-   
-   
+
+
 	<div class="column-top">
 		<div class="container">
 		<div clss="row">
@@ -181,28 +181,28 @@ get_sidebar();
 				<h2 class="title-h">
 					<?php if (qtrans_getLanguage()=='ja'){ ?>
 		            	最新コラム
-			        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 			            最新コラム
-			        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 			            最新コラム
 			        <?php } ?>
 		    	</h2>
-				
+
 					<?php if (qtrans_getLanguage()=='ja'){ ?>
 		            	<a href="<?php echo get_site_url(); ?>/top/ja/column" class="view-more-btn">一覧を見る</a>
-			        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 			            <a href="<?php echo get_site_url(); ?>/top/vi/column" class="view-more-btn">一覧を見る</a>
-			        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 			            <a href="<?php echo get_site_url(); ?>/top/en/column" class="view-more-btn">一覧を見る</a>
 			        <?php } ?>
-			    
+
 			</div>
 			<div class="owl-carousel owl-theme column-carousel">
 
 				<?php
 				switch_to_blog(3);
 			    	global $post;
-			 
+
 				    $posts = get_posts( array(
 				        'posts_per_page' => 6,
 				        'post_type' => 'columns',
@@ -210,7 +210,7 @@ get_sidebar();
 				        'orderby' => 'post_date',
 		 				'order' => 'DESC',
 				    ) );
-				 	
+
 				    if ($posts) {
 				        foreach ($posts as $post) :
 				?>
@@ -221,13 +221,13 @@ get_sidebar();
 						 endif; ?>
 						 <?php if (qtrans_getLanguage()=='en'){ ?>
 						<a href="<?php echo str_replace("/en/top/","/top/en/columns/",get_permalink()); ?>" class="news-title"><?php echo mb_strimwidth(get_the_title(), 0, 30, '...'); ?></a>
-	            	
-			        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+
+			        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 			            <a href="<?php echo str_replace("/vi/top/","/top/vi/columns/",get_permalink()); ?>" class="news-title"><?php echo mb_strimwidth(get_the_title(), 0, 30, '...'); ?></a>
-			        <?php }else if (qtrans_getLanguage()=='ja'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='ja'){ ?>
 			            <a href="<?php echo str_replace("/ja/top/","/top/ja/columns/",get_permalink()); ?>" class="news-title"><?php echo mb_strimwidth(get_the_title(), 0, 30, '...'); ?></a>
 			        <?php } ?>
-						
+
 						<?php echo mb_strimwidth(wp_strip_all_tags($post->post_content), 0, 75, '...'); ?>
 						<span class="column-date">― <?php the_modified_time('Y.m.d'); ?> UPDATE</span>
 					</div>
@@ -240,14 +240,14 @@ get_sidebar();
 		    ?>
 
 
-			
-				
+
+
 			</div>
 		</div>
 		</div>
 		</div>
 	</div>
-  
+
   	<div class="why-top">
   		<div class="container">
 		<div clss="row">
@@ -260,7 +260,7 @@ get_sidebar();
 		</div>
 		</div>
   	</div>
-  	
+
   	<div class="feature-top">
   		<div class="container">
 		<div clss="row">
@@ -276,9 +276,9 @@ get_sidebar();
 					<h3><?php echo get_field('title_strength1'); ?></h3>
 					<?php
 						$image1 = get_field('image_strength1');
-						$imageAlt = esc_attr($image1['alt']); 
-						$imageURL = esc_url($image1['url']); 
-						$imageThumbURL = esc_url($image1['sizes']['medium']); 
+						$imageAlt = esc_attr($image1['alt']);
+						$imageURL = esc_url($image1['url']);
+						$imageThumbURL = esc_url($image1['sizes']['medium']);
 					 ?>
 			    	<img src="<?php echo $imageThumbURL;?>">
 					<p><?php echo get_field('content_strength1'); ?></p>
@@ -289,9 +289,9 @@ get_sidebar();
 					<h3><?php echo get_field('title_strength2'); ?></h3>
 					<?php
 						$image1 = get_field('image_strength2');
-						$imageAlt = esc_attr($image1['alt']); 
-						$imageURL = esc_url($image1['url']); 
-						$imageThumbURL = esc_url($image1['sizes']['medium']); 
+						$imageAlt = esc_attr($image1['alt']);
+						$imageURL = esc_url($image1['url']);
+						$imageThumbURL = esc_url($image1['sizes']['medium']);
 					 ?>
 			    	<img src="<?php echo $imageThumbURL;?>">
 					<p><?php echo get_field('content_strength2'); ?></p>
@@ -302,9 +302,9 @@ get_sidebar();
 					<h3><?php echo get_field('title_strength3'); ?></h3>
 					<?php
 						$image1 = get_field('image_strength3');
-						$imageAlt = esc_attr($image1['alt']); 
-						$imageURL = esc_url($image1['url']); 
-						$imageThumbURL = esc_url($image1['sizes']['medium']); 
+						$imageAlt = esc_attr($image1['alt']);
+						$imageURL = esc_url($image1['url']);
+						$imageThumbURL = esc_url($image1['sizes']['medium']);
 					 ?>
 			    	<img src="<?php echo $imageThumbURL;?>">
 					<p><?php echo get_field('content_strength3'); ?></p>
@@ -316,18 +316,18 @@ get_sidebar();
 			<div class="center">
 					<?php if (qtrans_getLanguage()=='ja'){ ?>
 		            	<a href="<?php echo get_site_url(); ?>/top/ja/service" class="view-more-btn">もっと詳しく</a>
-			        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 			            <a href="<?php echo get_site_url(); ?>/top/vi/service" class="view-more-btn">もっと詳しく</a>
-			        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 			            <a href="<?php echo get_site_url(); ?>/top/en/service" class="view-more-btn">もっと詳しく</a>
 			        <?php } ?>
-			    
+
 			</div>
 		</div>
 		</div>
 		</div>
   	</div>
-  	
+
 
 
   	<div class="interview-top">
@@ -365,7 +365,7 @@ get_sidebar();
 				    }
 
 				    $args       = array('hide_empty' => false);
-				    $terms      = get_terms($taxonomies, $args );	
+				    $terms      = get_terms($taxonomies, $args );
 
 
 			$query->the_post();
@@ -387,16 +387,16 @@ get_sidebar();
 		            }
 		             $termCompany = get_the_terms($post->ID, "interviews-company");
 		            // print_r($termCompany);
-		             
-		             
+
+
 				?>
 			<div class="inter-big" style="background:url(<?php echo $image_src ;?>) no-repeat top left;background-size:cover;">
 				<div class="inter-big-overlay">
 					<?php if (qtrans_getLanguage()=='ja'){ ?>
                         <a href="<?php echo str_replace("/ja/top/","/top/ja/interview/",get_permalink($post->ID)); ?>"><?php echo get_the_title($post->ID); ?></a>
-                    <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+                    <?php }else if (qtrans_getLanguage()=='vi'){ ?>
                         <a href="<?php echo str_replace("/vi/top/","/top/vi/interview/",get_permalink($post->ID)); ?>"><?php echo get_the_title($post->ID); ?></a>
-                    <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+                    <?php }else if (qtrans_getLanguage()=='en'){ ?>
                         <a href="<?php echo str_replace("/en/top/","/top/en/interview/",get_permalink($post->ID)); ?>"><?php echo get_the_title($post->ID); ?></a>
                     <?php } ?>
 					<p><?php echo mb_strimwidth(wp_strip_all_tags(get_the_content($post->ID)), 0, 80, '...'); ?></p>
@@ -411,7 +411,7 @@ get_sidebar();
 				</div>
 			</div>
 
-				<?php	
+				<?php
 			wp_reset_postdata();
 			}
 			restore_current_blog();
@@ -422,24 +422,24 @@ get_sidebar();
 					<h2>
 					<?php if (qtrans_getLanguage()=='ja'){ ?>
 		            	インタビュー
-			        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 			            インタビュー
-			        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 			            インタビュー
 			        <?php } ?>
 			    </h2>
 			    <?php if (qtrans_getLanguage()=='ja'){ ?>
 		            	<a href="<?php echo get_site_url(); ?>/top/ja/interviews" class="view-more-btn no-bg">一覧を見る</a>
-			        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 			            <a href="<?php echo get_site_url(); ?>/top/vi/interviews" class="view-more-btn no-bg">一覧を見る</a>
-			        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 			            <a href="<?php echo get_site_url(); ?>/top/en/interviews" class="view-more-btn no-bg">一覧を見る</a>
 			        <?php } ?>
 				</div>
-				
-				
+
+
 				<div class="inter-list">
-				
+
 					<?php
   		switch_to_blog(3);
   			global $post;
@@ -453,12 +453,12 @@ get_sidebar();
 			        array(
 			            'key'     => 'interviews-candidate',
 			            'value'   => 'customer',
-			            
+
 			        ),
 			    ),
-			    
+
 			   // 'taxonomies' => array('interviews-company'),
-			    
+
 			);
 			$query = new WP_Query( $posts );
 			//print_r($query);
@@ -476,13 +476,13 @@ get_sidebar();
 				    }
 
 				    $args       = array('hide_empty' => false);
-				    $terms      = get_terms($taxonomies, $args );	
+				    $terms      = get_terms($taxonomies, $args );
 				//print_r($terms);
 			while ( $query->have_posts() ) : $query->the_post();
 				$thumb_id = get_post_thumbnail_id($post->ID);
 					$image_thumb1 = wp_get_attachment_image_src( $thumb_id, array('250','150'),true  );
 					$image_thumb2 = wp_get_attachment_image_src( $thumb_id, 'thumb-news-index' );
-					$image_full = wp_get_attachment_image_src( $thumb_id, 'full' );//array('250','150'),true 
+					$image_full = wp_get_attachment_image_src( $thumb_id, 'full' );//array('250','150'),true
 
 					$image_src = "";
 					if($thumb_id != ""){
@@ -492,7 +492,7 @@ get_sidebar();
 					}
 					////////////////////////////////////////////////////////////////////////
 					/*$taxonomies = array('interviews-company');
-					
+
 				    $check_later = array();
 				    global $wp_taxonomies;
 				    foreach($taxonomies as $taxonomy){
@@ -512,21 +512,21 @@ get_sidebar();
 				    	$ter = $term->name;
 				    }
 */
-				   
+
 					/////////////////////////////////////////////////////////////////////////////////////////
 		             $termCompany = get_the_terms($post->ID, "interviews-company");
-		       
+
 				?>
 				<div class="inter-blk">
 					<img src="<?php echo $image_src; ?>" >
 					<?php if (qtrans_getLanguage()=='ja'){ ?>
                         <a href="<?php echo str_replace("/ja/top/","/top/ja/interview/",get_permalink($post->ID)); ?>"><?php echo get_the_title($post->ID); ?></a>
-                    <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+                    <?php }else if (qtrans_getLanguage()=='vi'){ ?>
                         <a href="<?php echo str_replace("/vi/top/","/top/vi/interview/",get_permalink($post->ID)); ?>"><?php echo get_the_title($post->ID); ?></a>
-                    <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+                    <?php }else if (qtrans_getLanguage()=='en'){ ?>
                         <a href="<?php echo str_replace("/en/top/","/top/en/interview/",get_permalink($post->ID)); ?>"><?php echo get_the_title($post->ID); ?></a>
                     <?php } ?>
-					
+
 
 					<div class="inter-name">
 						<label><?php echo get_the_title($post->ID); ?></label>
@@ -551,7 +551,7 @@ get_sidebar();
   	</div>
 
 
-  	
+
   	<div class="client-top">
   		<div class="container">
 		<div clss="row">
@@ -559,17 +559,17 @@ get_sidebar();
 			<div class="center">
 				<h2 class="title-h"><?php echo get_field('title_company'); ?></h2>
 				<ul class="client-list">
-					<?php 
+					<?php
 						$images = acf_photo_gallery('logo_company', get_the_ID());
 						if( $images ):
 					?>
 
 				    <?php foreach( $images as $key => $image ): ?>
-				        <li> 
+				        <li>
 				            <img src="<?php echo $image['full_image_url']; ?>"  >
 				        </li>
-				    <?php endforeach; 
-				  		endif; 
+				    <?php endforeach;
+				  		endif;
 				  	?>
 				</ul>
 			</div>

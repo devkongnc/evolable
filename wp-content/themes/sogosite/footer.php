@@ -6,10 +6,24 @@
 </div>
 
 <a id="back_to_top" href="#">
-			<span class="fa-stack">
-				<i class="fa  fa-angle-up"></i>
-			</span>
+	<span class="fa-stack">
+		<i class="fa  fa-angle-up"></i>
+	</span>
 </a>
+
+<?php
+	// $plocations = array(
+	// 	'blog_id' => array( 2 ),
+	// 	'taxonomy' => 'job-location',
+
+	// );
+	// $terms = get_terms( array(
+	// 	'blog_id' => array( 2 ),
+	// 	'taxonomy' => 'job-location',
+	// 	'hide_empty' => false,
+	// ));
+ //    var_dump($terms);
+?>
 
 <div class="modal-box" id="place-box" style="display:none;">
 
