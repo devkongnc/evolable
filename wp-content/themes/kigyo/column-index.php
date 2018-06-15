@@ -372,17 +372,22 @@ get_sidebar();
                         ?>
 
                         <div class="col-md-3 col-sm-6 recruit">
+
                 <div class="job-blk">
-                    <?php
-                        if ( has_post_thumbnail() ) { ?>
-                            <img src="<?php echo get_the_post_thumbnail_url( null, 'post-thumbnail' );?>" >
-                         <?php }else{ ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/new/img/s2.jpg" >
-                        <?php }?>
+                		<?php 
+                        	$custom = get_post_custom();
+                        	$image = wp_get_attachment_image(get_post_meta($post->ID, 'default_image', true));
+                        	if($image){
+                        		echo $image;
+                        	}else{
+                        		echo '<img src="'.get_template_directory_uri().'/new/img/s2.jpg" >';
+                        	}
+                       	?>
+                    
                     <a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a>
                     <div class="job-if"><img src="<?php echo get_template_directory_uri(); ?>/new/img/icon-money.png" >
                         <?php
-                        $custom = get_post_custom();
+                        
                        foreach ($custom['salary'] as $key => $value) {
                         //print_r($value);
                            //echo $value;

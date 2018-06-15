@@ -166,7 +166,7 @@ function job_apply() {
 	                $attachments[] = $attach_file_path;
 			    }
 			    wp_mail($to, $sub, stripslashes($message), $headers );
-			    wp_mail('agent@evolable.asia', $subAdmin, stripslashes($message), $headers, $attachments);
+			    wp_mail('admin@gmail.com', $subAdmin, stripslashes($message), $headers, $attachments);//agent@evolable.asia
 			    $arrData = array(
 					'apply_date' => date( 'Y-m-d H:i:s' ),
 					'name' => $cname,

@@ -77,3 +77,5 @@ add_theme_support( 'custom-logo', array(
 		$html = str_replace('custom-logo', '', $html);
 		return $html;
 	}
+
+	
