@@ -172,15 +172,17 @@ function agent_pagenavi($custom_query = null, $paged = null) {
     $paged = ($paged) ? $paged : get_query_var('paged');
     $big = 999999999;
     $total = isset($main_query->max_num_pages)?$main_query->max_num_pages:'';
-    if($total > 1) echo '<div class="recrui-pagination">';
+    if($total > 1) echo '<div class=" pagination-circle">';
     echo paginate_links( array(
         'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
         'format' => '?paged=%#%',
         'current' => max( 1, $paged ),
         'total' => $total,
         'mid_size' => '2',
-        'prev_text'    => __('<img src="'.get_template_directory_uri().'/images/recruitment/icon-prev.png" alt=""/>','agent'),
-        'next_text'    => __('<img src="'.get_template_directory_uri().'/images/recruitment/icon-next.png" alt=""/>','agent'),
+        /*'prev_text'    => __('<img src="'.get_template_directory_uri().'/images/recruitment/icon-prev.png" alt=""/>','agent'),
+        'next_text'    => __('<img src="'.get_template_directory_uri().'/images/recruitment/icon-next.png" alt=""/>','agent'),*/
+        'prev_text'    => '',
+        'next_text'    => ''
     ) );
     if($total > 1) echo '</div>';
 }

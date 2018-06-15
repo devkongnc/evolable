@@ -73,88 +73,97 @@ $job_apply_wpnonce = wp_create_nonce('job_apply_wpnonce');
 get_header(); 
 get_sidebar();
 ?>
-
-<div id="job-apply">
-	<div id="breadcrumb-blo" class="container-fluid">
-	    <div class="container">
-	        <div class="row">
-	            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	                <div class="row cont-breadcrumb">
-	                    <div class="breadcrumb-sub">
-	                        <h3 class="text-uppercase"><?php echo __('[:ja]求人情報[:en]Recruitment[:vi]Tuyển dụng'); ?></h3>
-	                    </div>
-	                    <div id="bc-selectLang" class="pull-right dropdown hidden-xs">
-	                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-	                            <?php echo do_shortcode( '[get_name_lange_current]' ); ?>
-	                            <span class="caret"></span>
-	                        </button>
-	                        <?php echo do_shortcode( '[choose_lang_dropdown]' ); ?>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
+<div id="job-apply" class="right-content">
+	<div class="breadcrumb-bg">
+		<h2>APPLICANT FORM</h2>
 	</div>
+		<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="btn-section btn-3">
+					<li><a href="<?php echo get_site_url(); ?>">
+					<?php if (qtrans_getLanguage()=='ja'){ ?>
+			            求人情報
+			        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+			            求人情報
+			        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+			            求人情報
+			        <?php } ?>
+			     </a></li>
+					<li><a href="<?php echo str_replace("/recruitment/".qtranxf_getLanguage()."/","/top/".qtranxf_getLanguage()."/",get_site_url().'/'.qtranxf_getLanguage().'/column-index'); ?>">
+					<?php if (qtrans_getLanguage()=='ja'){ ?>
+			            コラム
+			        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+			            コラム
+			        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+			            コラム
+			        <?php } ?>
+			    </a></li>
+					<li><a href="<?php echo str_replace("/recruitment/".qtranxf_getLanguage()."/","/top/".qtranxf_getLanguage()."/",get_site_url().'/'.qtranxf_getLanguage().'/interviews'); ?>">
+					<?php if (qtrans_getLanguage()=='ja'){ ?>
+			            INTERVIEW
+			        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+			            INTERVIEW
+			        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+			            INTERVIEW
+			        <?php } ?>
+			    </a></li>
+					
+				</ul>
+			</div>
+		</div>
+	
+<div id="cont-apply-job" class="row company-if">
+			<div class="col-md-4">
+				<h1>
+				<?php if (qtrans_getLanguage()=='ja'){ ?>
+		            こちらに応募する場合、
+					下記をご記入ください。
+		        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+		            こちらに応募する場合、
+					下記をご記入ください。
+		        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+		            こちらに応募する場合、
+					下記をご記入ください。
+		        <?php } ?>
+        		</h1>
 
-	<div id="apply-info" class="container-fluid">
-	    <div class="container">
-	        <div class="row cont-apply-info">
-	            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
-	                <h4><?php echo get_post_field( 'post_title', $job_id ); ?></h4>
-	            </div>
-	            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
-	                <div class="code-apply text-right">
-	                    <!-- <span>Mã công việc</span> -->
-	                    <span><strong>No.<?php echo get_post_meta( $job_id, 'job_no', true ); ?></strong></span>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
-	<div id="cont-apply-job" class="container-fluid">
-	    <div class="container">
-	        <div class="row">
-	            <div class="breadcrumb-news-detail"><a href="#"><i class="fa fa-home"></i></a> <span class="sep"> / </span> <a href="#"><?php echo __('[:ja]求人情報[:en]Recruitment[:vi]Tuyển dụng') ?></a> <span class="sep"> </span></div>
-	            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
-	                <div class="row job-image">
-	                    <?php
+			</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">
+						<?php
 						if( get_field('default_image', $job_id) ) {
 							$src = get_field('default_image', $job_id);
 						} else {
 							$src = get_template_directory_uri()."/images/apply_job/img_job.jpg";
 						} ?>
-	                    <img class="img-responsive" src="<?php echo $src; ?>" alt="Bridge SE (Mobile Application Project Development)" />
-	                </div>
-	            </div>
-	            <div class="col-xs-12 col-sm-6 col-md-7 col-lg-5">
-	                <div class="job-desc">
-	                	<?php 
-	                	$term_locations = get_the_terms($job_id, 'job-location');
-	                	?>
-	                    <div class="job-location">
-	                    	<?php 
-	                    	if (is_array($term_locations)){
-	                            foreach($term_locations as $location) :
-	                                echo $location->name . ", ";
-	                            endforeach;
-	                        }
-	                    	?>
-	                    </div>
-	                    <div class="job-salary"><?php echo get_post_meta( $job_id, 'salary', true ); ?></div>
-	                    <div class="job-workingtime"><?php echo get_post_meta( $job_id, 'timework', true ); ?></div>
-	                    <div class="job-location benefit">
-	                        <span style="display: block; margin-top: 2px">
-	                        	<?php echo __('[:ja]福利厚生[:en]Benefit[:vi]Phúc lợi'); ?> - <?php echo __('[:ja]休日/休暇[:en]Holiday/Vacation[:vi]Nghỉ lễ/Nghỉ phép'); ?>
-	                        </span>
-                          	<div class="toogle-benefit">
-            					<p><?php echo get_post_meta( $job_id, 'benefits', true ); ?></p>
+	                    <img class="img-responsive" src="<?php echo $src; ?>"/>
+					</div>
+					<div class="col-md-8">
+						<h2><?php echo get_post_field( 'post_title', $job_id ); ?> </h2>
+						<p>■No.<?php echo get_post_meta( $job_id, 'job_no', true ); ?></p>
+						
+				        <div class="toogle-benefit">
+            					<p>■<?php echo mb_strimwidth(wp_strip_all_tags(get_post_meta( $job_id, 'benefits', true )), 0, 80, '...'); ?></p>
                          	</div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
+						
+						<div class="right">
+							<a href="<?php echo get_permalink($job_id); ?>" class="view-more-btn">詳細に戻る</a>
+						</div>
+						
+					</div>
+				</div>
+				
+
+			</div>
+		</div>
+	
+</div>
+	                   
+    <div class="form-content gray-bg">                       	
+	                    
+
 
 	<div id="apply-form" class="container-fluid">
 	    <div class="container">
@@ -167,10 +176,8 @@ get_sidebar();
 	                	<input type="hidden" name="job_no" value="<?php echo get_post_meta( $job_id, 'job_no', true ); ?>">
 	                	<input type="hidden" name="job_title" value="<?php echo get_post_field( 'post_title', $job_id ); ?>">
 	                	<!-- <input type="hidden" name="url" value="<?php echo home_url( add_query_arg( array(), $wp->request ) ); ?>"> -->
-	                    <div class="panel panel-default">
-	                        <div class="panel-heading">
-	                            <h3 class="panel-title text-uppercase text-center"><?php echo __('[:ja]お申し込みフォーム[:en]APPLICANT FORM[:vi]ĐƠN ỨNG TUYỂN'); ?></h3>
-	                        </div>
+	                    <div class="panel-default">
+	                        
 	                        <div class="panel-body body-apply-form">
 	                            <div class="row">	
 
@@ -310,14 +317,14 @@ get_sidebar();
 	                                </div>
 	                                <div class="col-xs-12 col-sm-12 col-md-12">
 	                                    <div class="text-center">
-	                                          <button id="btnSubmit" data-toggle="modal" data-target="#myConfirm" class="btn btn-default text-uppercase">
-	                                          	<?php if( qtranxf_getLanguage() == 'ja' ) { ?>
-	                                          		<img src="<?php echo get_template_directory_uri(); ?>/images/apply_job/btn-send-job.png" alt="" />
-	                                          	<?php } elseif( qtranxf_getLanguage() == 'en' ) { ?>
-	                                          		<img src="<?php echo get_template_directory_uri(); ?>/images/apply_job/btn-send-job-en.png" alt="" />
-	                                          	<?php } elseif( qtranxf_getLanguage() == 'vi' ) { ?>
-	                                          		<img src="<?php echo get_template_directory_uri(); ?>/images/apply_job/btn-send-job-vn.png" alt="" />
-	                                          	<?php } ?>
+	                                          <button id="btnSubmit" data-toggle="modal" data-target="#myConfirm" class="btn btn-default text-uppercase big-btn" >
+	                                          <?php if (qtrans_getLanguage()=='ja'){ ?>
+									            エントリーする
+									        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+									            エントリーする
+									        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+									            エントリーする
+									        <?php } ?>
 	                                          </button>
 	                                    </div>
 	                                </div>
@@ -330,6 +337,7 @@ get_sidebar();
 	    </div>
 	</div>
 </div>
+
 
 <div id="myConfirm" class="container-fluid modal fade" role="dialog" style="display: none;">
    <div class="modal-dialog">
@@ -418,8 +426,7 @@ get_sidebar();
             </div>
          </div>
       </div>
-   </div>
-</div>
+
 <div id="mySuccess" class="modal fade" role="dialog">
    <div class="modal-dialog">
       <!-- Modal content-->
@@ -444,7 +451,8 @@ Trường hợp sau 3 ngày không nhận được sự liên hệ vui lòng li�
       </div>
    </div>
 </div>
-
+</div>
+</div>
 <?php
 get_footer();
 ?>

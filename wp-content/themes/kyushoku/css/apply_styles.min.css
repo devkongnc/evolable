@@ -177,6 +177,9 @@ html[lang="vi"] .body-apply-form .form-group label.lb-comment {
     height: 40px;
     background-color: #f6f6f6;
 }
+.body-apply-form .form-group .form-control.error{
+    border-color: red;
+}
 .body-apply-form .form-group textarea.form-control {
     height: 103px
 }
