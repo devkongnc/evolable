@@ -18,23 +18,34 @@
           求人情報
       <?php } ?>
     </a></li>
-  <li><a href="<?php echo str_replace("/recruitment/".qtranxf_getLanguage()."/","/top/".qtranxf_getLanguage()."/",get_site_url().'/'.qtranxf_getLanguage().'/column-index'); ?>">
-  <?php if (qtrans_getLanguage()=='ja'){ ?>
+  <li>
+    <?php switch_to_blog(3); ?> 
+  <a href="<?php echo get_site_url().'/'.qtranxf_getLanguage().'/column-index'; ?>">
+   <?php if (qtrans_getLanguage()=='ja'){ ?>
           転職のためのコラム
       <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
           転職のためのコラム
       <?php }else if (qtrans_getLanguage()=='en'){ ?> 
           転職のためのコラム
       <?php } ?>
-  </a></li>
-  <li><a href="<?php echo str_replace("/recruitment/".qtranxf_getLanguage()."/","/top/".qtranxf_getLanguage()."/",get_site_url().'/'.qtranxf_getLanguage().'/interviews'); ?>">
-  <?php if (qtrans_getLanguage()=='ja'){ ?>
+      </a>
+  <?php restore_current_blog();
+?>
+</li>
+  <li>
+    <?php switch_to_blog(3); ?> 
+  <a href="<?php echo get_site_url().'/'.qtranxf_getLanguage().'/interviews'; ?>">
+   <?php if (qtrans_getLanguage()=='ja'){ ?>
           転職者インタビュー
       <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
           転職者インタビュー
       <?php }else if (qtrans_getLanguage()=='en'){ ?> 
           転職者インタビュー
-      <?php } ?></a></li>
+      <?php } ?>
+      </a>
+  <?php restore_current_blog();
+?>
+</li>
 
   <li><a href="<?php echo get_site_url(); ?>/jobs/">
   <?php if (qtrans_getLanguage()=='ja'){ ?>

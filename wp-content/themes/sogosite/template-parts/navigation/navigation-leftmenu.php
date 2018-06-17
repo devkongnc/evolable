@@ -15,18 +15,44 @@
               </li>
 
               <li>
-                 <a href="<?php echo get_site_url(); ?>/top/<?php echo qtranxf_getLanguage(); ?>/column-index">求職者応援コラム</a>
+                <?php
+                  switch_to_blog(3); ?> 
+                  <a href="<?php echo get_site_url().'/'.qtranxf_getLanguage().'/column-index'; ?>">求職者応援コラム</a>
+                  <?php restore_current_blog();
+                ?>
+                 
               </li>
 
                <li  class="nav-parrent">
-                   <a href="<?php echo get_site_url(); ?>/recruitment">求人情報検索</a>
+                <?php
+                  switch_to_blog(2); ?> 
+                  <a href="<?php echo get_site_url(); ?>">求人情報検索</a>
+                  <?php restore_current_blog();
+                ?>
+                  
                    <ul class="sub-nav">
-                    <li><a href="<?php echo get_site_url(); ?>/top/<?php echo qtranxf_getLanguage(); ?>/interviews">利用者インタビュー</a></li>
-                    <li><a href="<?php echo get_site_url(); ?>/recruitment/<?php echo qtranxf_getLanguage(); ?>/job-apply">応募フォーム</a></li>
+                    <li>
+                      <?php
+                  switch_to_blog(3); ?> 
+                  <a href="<?php echo get_site_url().'/'.qtranxf_getLanguage().'/interviews'; ?>">利用者インタビュー</a>
+                  <?php restore_current_blog();
+                ?>
+              </li>
+                    <li>
+                      <?php
+                  switch_to_blog(2); ?> 
+                  <a href="<?php echo get_site_url().'/'.qtranxf_getLanguage().'/job-apply'; ?>">応募フォーム</a>
+                  <?php restore_current_blog();
+                ?>
+               </li>
                    </ul>
                </li>
                <li>
-                   <a href="<?php echo get_site_url(); ?>/top/<?php echo qtranxf_getLanguage(); ?>/about">企業概要</a>
+                <?php
+                  switch_to_blog(3); ?> 
+                  <a href="<?php echo get_site_url().'/'.qtranxf_getLanguage().'/about'; ?>">企業概要</a>
+                  <?php restore_current_blog();
+                ?>
                </li>
 
        </ul>

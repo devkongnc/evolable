@@ -1,4 +1,25 @@
 <?php
+
+
+
+// $argsJobs = array(
+//                     'posts_per_page' => -1,
+//                     'post_type' => 'post',
+//                     'post_status'=>'publish',
+//                     'orderby'     => 'post_date',
+// 		            'order'   => 'ASC',
+		           
+//                     //'paged'			 => $paged
+
+//                 );
+// $wp_query1 = new WP_Query( $argsJobs );
+// echo "<pre>";
+// var_dump($wp_query1);
+// echo "</pre>";
+// die();
+
+
+
 get_header();
 get_sidebar();
 ?>
@@ -182,21 +203,26 @@ get_sidebar();
 			        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 			            最新求人情報
 			        <?php } ?></h2>
-
-				<?php
-				$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+<!-- 
+ <?php //echo do_shortcode( '[ajax_pagination post_type="jobs" posts_per_page="5" paged="1"]' ); ?>
+ -->
+ <?php
+				//$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
               //  global $post;
 
                 $argsJobs = array(
-                    'posts_per_page' => 5,
+                    'posts_per_page' => -1,
                     'post_type' => 'jobs',
-                    'post_status'=>'publish',
-                    'orderby' => 'post_date',
-                    'order' => 'DESC',
-                    'paged'			 => $paged
+                    // 'post_status'=>'publish',
+                    // 'orderby'     => 'ID',
+		            // 'order'   => 'DESC',
+		           
+                    //'paged'			 => $paged
 
                 );
+
              $wp_query1 = new WP_Query( $argsJobs );
+             //print_r($wp_query1);
                 if ($wp_query1->have_posts()) {
                     while( $wp_query1->have_posts() ) : $wp_query1->the_post();
                         setup_postdata($post);
@@ -246,7 +272,7 @@ get_sidebar();
 							endif; ?>
 
 						</p>
-						<span class="recruit-date">― <?php the_modified_time('Y.m.d'); ?> UPDATED</span>
+						<span class="recruit-date">― <?php echo the_modified_time('Y.m.d'); //the_modified_time() get_the_date ?> UPDATED</span>
 						<a href="<?php echo get_permalink($post->ID); ?>" class="view-more-btn">
 						<?php if (qtrans_getLanguage()=='ja'){ ?>
 		                	詳細を見る
@@ -266,11 +292,6 @@ get_sidebar();
                 }
             ?>
 
-
-				<div class="row row-recrui">
-		<?php if (function_exists('agent_pagenavi')) agent_pagenavi($wp_query1); ?>
-		<!-- /PAGINATION -->
-	</div>
 
 
 			</div>

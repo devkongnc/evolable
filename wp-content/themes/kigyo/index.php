@@ -62,18 +62,7 @@ get_sidebar();
         <div class="row">
             <div class="col-md-12">
                 <div class="special-p">
-                    <div class="col-md-5">
-                        <img src="<?php echo get_template_directory_uri(); ?>/new/img/p3.jpg" >
-                    </div>
-                    <div class="col-md-7">
-                        <h2>私たちができること。</h2>
-                        <p>人材を必要とされるお客様の専門的なご相談にも応じられるように、 各業界・職種に専門特化しています。 
-<br>業界出身のコンサルタントも多く在籍しており、 詳しい知識や自身の経験を活かした転職サポートができる体制を構築。 
-<br>業界出身者にしか分からないような転職活動や キャリアに関する悩み・疑問など、様々なご相談を承っております。 
-<br>海外のほうにもたくさんのお客様がおり、世界と日本をつなぐ 充実した人材探しが実現できます。 
-<br>転職活動の始まりから転職後まで、 転職のプロがあなたのパートナーとしてきめ細かいサポートを提供いたします。
-</p>
-                    </div>
+                   <?php get_template_part( 'template-parts/company/company', 'top' ); ?>
                 </div>
             </div>
         </div>
@@ -323,7 +312,18 @@ get_sidebar();
                     企業様向けコラム
                 <?php } ?>
                     </h2>
-                    <?php echo get_field('button_service'); ?>
+                    <?php switch_to_blog(3); ?> 
+                    <a href="<?php echo get_site_url().'/'.qtranxf_getLanguage().'/column'; ?>" class="view-more-btn">
+                        <?php if (qtrans_getLanguage()=='ja'){ ?>
+                        一覧を見る
+                    <?php }else if (qtrans_getLanguage()=='vi'){ ?>
+                        一覧を見る
+                    <?php }else if (qtrans_getLanguage()=='en'){ ?>
+                        一覧を見る
+                    <?php } ?>
+                    </a>
+                    <?php restore_current_blog();
+                ?>
                 
                 </div>
             </div>
