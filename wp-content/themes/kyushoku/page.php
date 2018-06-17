@@ -21,9 +21,9 @@ get_sidebar();
 		<h2>
 		<?php if (qtrans_getLanguage()=='ja'){ ?>
             求人情報検索
-        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
             求人情報検索
-        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+        <?php }else if (qtrans_getLanguage()=='en'){ ?>
             求人情報検索
         <?php } ?>
     </h2>
@@ -37,16 +37,16 @@ get_sidebar();
 		            <li><a class="current" href="#">勤務地から探す</a></li>
 					<li><a href="#job" class="fancybox">職種から探す</a></li>
 					<li><a href="#key-word" class="fancybox">キーワードから探す</a></li>
-		        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 		            <li><a class="current" href="#">勤務地から探す</a></li>
 					<li><a href="#job" class="fancybox">職種から探す</a></li>
 					<li><a href="#key-word" class="fancybox">キーワードから探す</a></li>
-		        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 		            <li><a class="current" href="#">勤務地から探す</a></li>
 					<li><a href="#job" class="fancybox">職種から探す</a></li>
 					<li><a href="#key-word" class="fancybox">キーワードから探す</a></li>
 		        <?php } ?>
-					
+
 
 				</ul>
 			</div>
@@ -56,9 +56,9 @@ get_sidebar();
 				<h2 class="green-txt">
 				<?php if (qtrans_getLanguage()=='ja'){ ?>
 		            勤務地から探す
-		        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 		            勤務地から探す
-		        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+		        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 		            勤務地から探す
 		        <?php } ?>
     			</h2>
@@ -69,16 +69,16 @@ get_sidebar();
 				            <li class="active"><a data-toggle="tab" href="#tab1">地方から探す</a></li>
                             <li><a data-toggle="tab" href="#tab2">都道府県から探す</a></li>
                             <li><a data-toggle="tab" href="#tab3">海外から探す</a></li>
-				        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+				        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 				            <li class="active"><a data-toggle="tab" href="#tab1">地方から探す</a></li>
                             <li><a data-toggle="tab" href="#tab2">都道府県から探す</a></li>
                             <li><a data-toggle="tab" href="#tab3">海外から探す</a></li>
-				        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+				        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 				            <li class="active"><a data-toggle="tab" href="#tab1">地方から探す</a></li>
                             <li><a data-toggle="tab" href="#tab2">都道府県から探す</a></li>
                             <li><a data-toggle="tab" href="#tab3">海外から探す</a></li>
 				        <?php } ?>
-                            
+
                         </ul>
                     </div>
                     <div class="col-md-8">
@@ -177,16 +177,16 @@ get_sidebar();
 				<h2>
 				<?php if (qtrans_getLanguage()=='ja'){ ?>
 			            最新求人情報
-			        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 			           	最新求人情報
-			        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+			        <?php }else if (qtrans_getLanguage()=='en'){ ?>
 			            最新求人情報
 			        <?php } ?></h2>
 
 				<?php
 				$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
               //  global $post;
-             	
+
                 $argsJobs = array(
                     'posts_per_page' => 5,
                     'post_type' => 'jobs',
@@ -198,8 +198,8 @@ get_sidebar();
                 );
              $wp_query1 = new WP_Query( $argsJobs );
                 if ($wp_query1->have_posts()) {
-                    while( $wp_query1->have_posts() ) : $wp_query1->the_post(); 
-                        setup_postdata($post); 
+                    while( $wp_query1->have_posts() ) : $wp_query1->the_post();
+                        setup_postdata($post);
                         $term_positions = get_the_terms($post->ID, "job-position");
                         $term_locations = get_the_terms($post->ID, 'job-location');
                        // print_r($termCompany);
@@ -214,10 +214,10 @@ get_sidebar();
 								echo get_template_directory_uri()."/images/recruitment/img-4.png";
 							}
 						?>" alt="<?php the_title();?>" />
-						
+
 						<a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a>
 						<ul class="tags-list">
-							<?php 
+							<?php
 							if($term_positions){
 							foreach ($term_positions as $position) {
 							 //$cate_link = get_term_link( $position->term_id );
@@ -231,10 +231,10 @@ get_sidebar();
 							 if ( !is_null(get_field('salary')) ) :
 								echo mb_strimwidth(wp_strip_all_tags(get_field('salary')), 0, 80, '...');
 							endif; ?></li>
-							<li><img src="<?php echo get_template_directory_uri(); ?>/new/img/icon-map.png"> 
-							<?php 
+							<li><img src="<?php echo get_template_directory_uri(); ?>/new/img/icon-map.png">
+							<?php
 							if($term_locations){
-							foreach ($term_locations as $location) { 
+							foreach ($term_locations as $location) {
 							echo $location->name . ", ";
 							} } ?>
 						</li>
@@ -244,28 +244,28 @@ get_sidebar();
 							 if ( !is_null(get_field('description')) ) :
 								echo mb_strimwidth(wp_strip_all_tags(get_field('description')), 0, 150, '...');
 							endif; ?>
-							
+
 						</p>
 						<span class="recruit-date">― <?php the_modified_time('Y.m.d'); ?> UPDATED</span>
 						<a href="<?php echo get_permalink($post->ID); ?>" class="view-more-btn">
 						<?php if (qtrans_getLanguage()=='ja'){ ?>
 		                	詳細を見る
-			            <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+			            <?php }else if (qtrans_getLanguage()=='vi'){ ?>
 			                詳細を見る
-			            <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+			            <?php }else if (qtrans_getLanguage()=='en'){ ?>
 			                詳細を見る
 			            <?php } ?>
         			</a>
 				</div>
 
 
-                        
+
                     <?php
                     endwhile;
                     wp_reset_postdata();
                 }
             ?>
-				
+
 
 				<div class="row row-recrui">
 		<?php if (function_exists('agent_pagenavi')) agent_pagenavi($wp_query1); ?>
