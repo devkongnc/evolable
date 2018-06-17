@@ -373,6 +373,7 @@ get_sidebar();
 
                     $args       = array('hide_empty' => false);
                     $terms      = get_terms($taxonomies, $args );
+                    
                    // $i=4;
                     foreach ($posts as $key => $post) : 
                      
