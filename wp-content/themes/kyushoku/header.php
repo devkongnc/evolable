@@ -64,6 +64,7 @@
     ?>
     <meta property="og:image" content="<?php echo $ogImage;?>" />
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/new/js//bootstrap.min.js"></script>
 	<script type="text/javascript">
 		var template_url = "<?php echo get_template_directory_uri(); ?>";
 	</script>
