@@ -34,7 +34,21 @@
                                    <?php get_template_part( 'template-parts/navigation/navigation', 'leftmenu' ); ?>
                                 </div>
 
-                            <a href="<?php echo str_replace("/recruitment/".qtranxf_getLanguage()."/","/top/".qtranxf_getLanguage()."/",get_site_url().'/'.qtranxf_getLanguage().'/'); ?>" class="employ-btn"><img src="<?php echo get_template_directory_uri(); ?>/new/img/icon-building.png" > 採用企業の皆さまへ</a>
+                <?php
+                  switch_to_blog(3); ?> 
+                  <a href="<?php echo get_site_url(); ?>" class="employ-btn"><img src="<?php echo get_template_directory_uri(); ?>/new/img/icon-building.png" >
+                    <?php if (qtrans_getLanguage()=='ja'){ ?>
+                      採用企業の皆さまへ
+                  <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+                      採用企業の皆さまへ
+                  <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+                      採用企業の皆さまへ
+                  <?php } ?>
+                  </a>
+                  <?php restore_current_blog();
+                ?>
+
+                           
                           </nav>
                        </div>
         <div class="banner">

@@ -58,7 +58,7 @@
                                         </map>
                                     </div>
                                 </div>
-                                <form id="form-maps" action="<?php echo site_url( '/recruitment/'.qtranxf_getLanguage().'/jobs/'); ?>" method="get">
+                                <form id="form-maps" action="<?php echo site_url( '/'.qtranxf_getLanguage().'/jobs/'); ?>" method="get">
                                     <input class="location-name" type="hidden" name="location" value="">
                                 </form>
                             </div>

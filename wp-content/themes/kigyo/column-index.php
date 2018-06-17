@@ -122,15 +122,19 @@ get_sidebar();
                    求人者様向けコラム
                 <?php } ?>
             </h2>
-                <a href="<?php echo str_replace("/top/".qtranxf_getLanguage()."/","/recruitment/".qtranxf_getLanguage()."/",get_site_url().'/'.qtranxf_getLanguage().'/columns'); ?>" class="view-more-btn">
-                <?php if (qtrans_getLanguage()=='ja'){ ?>
+            <?php switch_to_blog(2); ?> 
+    <a href="<?php echo get_site_url().'/'.qtranxf_getLanguage().'/columns'; ?>" class="view-more-btn">
+    <?php if (qtrans_getLanguage()=='ja'){ ?>
                     一覧を見る
                 <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
                     一覧を見る
                 <?php }else if (qtrans_getLanguage()=='en'){ ?> 
                    一覧を見る
                 <?php } ?>
-            </a>
+    </a>
+    <?php restore_current_blog();
+?>
+
                 </div>
             </div>
         </div>
