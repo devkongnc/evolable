@@ -24,6 +24,13 @@ require get_template_directory() . '/inc/index/search-job.php';
 
 // banner
 require get_template_directory() . '/inc/banner/index.php';
+
+// column
+	require get_template_directory() . '/inc/columns/index.php';
+
+//pagination
+require get_template_directory() . '/AjaxPagination/ajax_pagination_wp.php';
+	
 /***Add colum for page recruitment****/
 /*add_filter('manage_posts_columns', 'recruitment_columns');
 function recruitment_columns($columns) {

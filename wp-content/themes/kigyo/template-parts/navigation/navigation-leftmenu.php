@@ -11,7 +11,11 @@
 ?>
         <ul class="nav navbar-nav" id="top-nav">
          <li class="">
-                 <a href="/evolable">トップ</a>
+                 <?php
+                  switch_to_blog(1); ?> 
+                  <a href="<?php echo get_site_url(); ?>">トップ</a>
+                  <?php restore_current_blog();
+                ?>
               </li>
             
               <li>
@@ -19,11 +23,21 @@
               </li>
 
                <li  class="nav-parrent">
-                <a href="<?php echo str_replace("/top/".qtranxf_getLanguage()."/","/recruitment/".qtranxf_getLanguage()."/",get_site_url().'/'.qtranxf_getLanguage().'/'); ?>">求人情報検索</a>
+                <?php
+                  switch_to_blog(2); ?> 
+                  <a href="<?php echo get_site_url().'/'.qtranxf_getLanguage(); ?>">求人情報検索</a>
+                  <?php restore_current_blog();
+                ?>
                   
                    <ul class="sub-nav">
                     <li><a href="<?php echo get_site_url(); ?>/<?php echo qtranxf_getLanguage(); ?>/interviews">利用者インタビュー</a></li>
-                    <li><a href="#">応募フォーム</a></li>
+                    <li>
+                      <?php
+                  switch_to_blog(2); ?> 
+                  <a href="<?php echo get_site_url().'/'.qtranxf_getLanguage().'/job-apply'; ?>">応募フォーム</a>
+                  <?php restore_current_blog();
+                ?>
+              </li>
                    </ul>
                </li>
                <li>

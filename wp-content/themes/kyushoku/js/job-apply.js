@@ -2,10 +2,15 @@
 
 	$('.job-location > span').click(function() {
 		$('.job-location').toggleClass('active');
+<<<<<<< HEAD
 		$('.toogle-benefit').toggle();
 	});
+=======
+		//$('.toogle-benefit').toggle();
+	})
+>>>>>>> cd9bb847f44c74812b8021802966c27a1b6ca719
 
-	$('.toogle-benefit > p').html( $('.toogle-benefit > p').html().replace(/\r?\n/g, '<br />') );
+	//$('.toogle-benefit > p').html( $('.toogle-benefit > p').html().replace(/\r?\n/g, '<br />') );
 
 	$( "#btnSubmit" ).click( function( e ) {
 		e.preventDefault();

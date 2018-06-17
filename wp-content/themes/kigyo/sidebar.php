@@ -35,13 +35,19 @@
                
             </div>
 
-        <?php if (qtrans_getLanguage()=='ja'){ ?>
-            <a href="<?php echo get_site_url(); ?>/ja" class="employ-btn"><img src="<?php echo get_stylesheet_directory_uri(); ?>/new/img/icon-building.png" > 採用企業の皆さまへ</a>
-        <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
-            <a href="<?php echo get_site_url(); ?>/vi" class="employ-btn"><img src="<?php echo get_stylesheet_directory_uri(); ?>/new/img/icon-building.png" > 採用企業の皆さまへ</a>
-        <?php }else if (qtrans_getLanguage()=='en'){ ?> 
-            <a href="<?php echo get_site_url(); ?>/en" class="employ-btn"><img src="<?php echo get_stylesheet_directory_uri(); ?>/new/img/icon-building.png" > 採用企業の皆さまへ</a>
-        <?php }  ?>
+        <?php
+                  switch_to_blog(3); ?> 
+                  <a href="<?php echo get_site_url(); ?>" class="employ-btn"><img src="<?php echo get_template_directory_uri(); ?>/new/img/icon-building.png" >
+                  <?php if (qtrans_getLanguage()=='ja'){ ?>
+                      採用企業の皆さまへ
+                  <?php }else if (qtrans_getLanguage()=='vi'){ ?> 
+                      採用企業の皆さまへ
+                  <?php }else if (qtrans_getLanguage()=='en'){ ?> 
+                      採用企業の皆さまへ
+                  <?php } ?>
+                </a>
+                  <?php restore_current_blog();
+                ?>
       </nav>
    </div>
         <div class="banner">
