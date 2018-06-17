@@ -165,7 +165,6 @@
 
 <!-- js new -->
 <script src="<?php echo get_template_directory_uri(); ?>/new/js/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/new/js/bootstrap.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/new/js/twitter-bootstrap-hover-dropdown.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/new/js/waypoints.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/new/js/jquery.easing.min.js"></script>
