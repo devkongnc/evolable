@@ -15,7 +15,6 @@ get_header();
 get_sidebar();
 ?>
 <div class="right-content">
-
 	<div class="top-intro">
 		<div class="container">
 		<div class="row">
