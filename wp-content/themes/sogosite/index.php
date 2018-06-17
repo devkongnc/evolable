@@ -102,13 +102,21 @@ get_sidebar();
 		        <?php } ?>
 		    </h2>
 
-				<?php if (qtrans_getLanguage()=='ja'){ ?>
-	            	<a href="<?php echo get_site_url(); ?>/top/ja/newsrelease" class="view-more-btn">一覧を見る</a>
-		        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
-		            <a href="<?php echo get_site_url(); ?>/top/vi/newsrelease" class="view-more-btn">一覧を見る</a>
-		        <?php }else if (qtrans_getLanguage()=='en'){ ?>
-		            <a href="<?php echo get_site_url(); ?>/top/en/newsrelease" class="view-more-btn">一覧を見る</a>
-		        <?php } ?>
+		    <?php
+				switch_to_blog(3); ?> 
+				<a href="<?php echo get_site_url().'/'.qtranxf_getLanguage().'/newsrelease'; ?> " class="view-more-btn">
+					<?php if (qtrans_getLanguage()=='ja'){ ?>
+				    	一覧を見る
+				    <?php }else if (qtrans_getLanguage()=='vi'){ ?>
+				        一覧を見る
+				    <?php }else if (qtrans_getLanguage()=='en'){ ?>
+				        一覧を見る
+				    <?php } ?>
+				</a>
+				<?php restore_current_blog();
+			?>
+
+				
 
 		</div>
 		<ul class="news-list">
@@ -147,6 +155,8 @@ get_sidebar();
 					<?php	}
 					?>
 					</ul>
+				
+
 					<?php if (qtrans_getLanguage()=='en'){ ?>
 						<a href="<?php echo str_replace("/en/top/","/top/en/newsrelease/",get_permalink()); ?>" class="news-title"><?php echo get_the_title(); ?></a>
 
@@ -187,13 +197,20 @@ get_sidebar();
 			        <?php } ?>
 		    	</h2>
 
+					
+			         <?php
+				switch_to_blog(3); ?> 
+				<a href="<?php echo get_site_url().'/'.qtranxf_getLanguage().'/column'; ?> " class="view-more-btn">
 					<?php if (qtrans_getLanguage()=='ja'){ ?>
-		            	<a href="<?php echo get_site_url(); ?>/top/ja/column" class="view-more-btn">一覧を見る</a>
-			        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
-			            <a href="<?php echo get_site_url(); ?>/top/vi/column" class="view-more-btn">一覧を見る</a>
-			        <?php }else if (qtrans_getLanguage()=='en'){ ?>
-			            <a href="<?php echo get_site_url(); ?>/top/en/column" class="view-more-btn">一覧を見る</a>
-			        <?php } ?>
+				    	一覧を見る
+				    <?php }else if (qtrans_getLanguage()=='vi'){ ?>
+				        一覧を見る
+				    <?php }else if (qtrans_getLanguage()=='en'){ ?>
+				        一覧を見る
+				    <?php } ?>
+				</a>
+				<?php restore_current_blog();
+			?>
 
 			</div>
 			<div class="owl-carousel owl-theme column-carousel">
@@ -313,14 +330,18 @@ get_sidebar();
 		<div clss="row">
 		<div class="col-md-12">
 			<div class="center">
-					<?php if (qtrans_getLanguage()=='ja'){ ?>
-		            	<a href="<?php echo get_site_url(); ?>/top/ja/service" class="view-more-btn">もっと詳しく</a>
+				<?php switch_to_blog(3); ?> 
+					<a href="<?php echo get_site_url().'/'.qtranxf_getLanguage().'/service'; ?>" class="view-more-btn">
+						<?php if (qtrans_getLanguage()=='ja'){ ?>
+		            	もっと詳しく
 			        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
-			            <a href="<?php echo get_site_url(); ?>/top/vi/service" class="view-more-btn">もっと詳しく</a>
+			            もっと詳しく
 			        <?php }else if (qtrans_getLanguage()=='en'){ ?>
-			            <a href="<?php echo get_site_url(); ?>/top/en/service" class="view-more-btn">もっと詳しく</a>
+			            もっと詳しく
 			        <?php } ?>
-
+					</a>
+					<?php restore_current_blog();
+				?>
 			</div>
 		</div>
 		</div>
@@ -427,13 +448,19 @@ get_sidebar();
 			            インタビュー
 			        <?php } ?>
 			    </h2>
-			    <?php if (qtrans_getLanguage()=='ja'){ ?>
-		            	<a href="<?php echo get_site_url(); ?>/top/ja/interviews" class="view-more-btn no-bg">一覧を見る</a>
+			    <?php switch_to_blog(3); ?> 
+					<a href="<?php echo get_site_url().'/'.qtranxf_getLanguage().'/interviews'; ?>" class="view-more-btn no-bg">
+						<?php if (qtrans_getLanguage()=='ja'){ ?>
+		            	一覧を見る
 			        <?php }else if (qtrans_getLanguage()=='vi'){ ?>
-			            <a href="<?php echo get_site_url(); ?>/top/vi/interviews" class="view-more-btn no-bg">一覧を見る</a>
+			            一覧を見る
 			        <?php }else if (qtrans_getLanguage()=='en'){ ?>
-			            <a href="<?php echo get_site_url(); ?>/top/en/interviews" class="view-more-btn no-bg">一覧を見る</a>
+			            一覧を見る
 			        <?php } ?>
+					</a>
+					<?php restore_current_blog();
+				?>
+			    
 				</div>
 
 
