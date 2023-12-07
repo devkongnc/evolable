@@ -4,7 +4,7 @@ define( 'WP_ALLOW_MULTISITE', true );
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', false);
 
-define('DOMAIN_CURRENT_SITE', 'evolable.dev');
+define('DOMAIN_CURRENT_SITE', 'agent.evolable.local');
 define('PATH_CURRENT_SITE', '/');
 
 define('SITE_ID_CURRENT_SITE', 1);
@@ -32,13 +32,13 @@ define('BLOG_ID_CURRENT_SITE', 1);
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'wp_eaa');
+define('DB_NAME', 'wp_agent-db');
 
 /** MySQL database username */
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', '123456');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
